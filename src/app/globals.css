@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@source "../components";
+@source "../app";
+@source "../context";
+@theme {
+  /* Font Family */
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
+  /* True Black Theme Colors */
+  --color-background: #000000;
+  --color-foreground: #f4f4f5;
+
+  --color-card: #09090b;
+  --color-card-foreground: #f4f4f5;
+
+  --color-popover: #09090b;
+  --color-popover-foreground: #f4f4f5;
+
+  --color-primary: #3b82f6;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #18181b;
+  --color-secondary-foreground: #f4f4f5;
+
+  --color-muted: #18181b;
+  --color-muted-foreground: #a1a1aa;
+
+  --color-accent: #27272a;
+  --color-accent-foreground: #f4f4f5;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #27272a;
+  --color-input: #27272a;
+  --color-ring: #3b82f6;
+
+  /* Border Radius */
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+
+  /* Custom Transitions */
+  --transition-all: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 240 5% 96%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 240 5% 96%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 240 5% 96%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 240 5% 96%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 240 5% 96%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 85.5 100% 96%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 5% 64.9%;
+  }
+}
+
+/* Base Body Styles */
+body {
+  background-color: #000000;
+  color: #f4f4f5;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+/* Custom Scrollbar for True Black theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Subtle glowing layout wrappers */
+.glow-wrapper {
+  position: relative;
+}
+
+.glow-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 800px at 50% -200px, rgba(59, 130, 246, 0.08), transparent 80%);
+  z-index: 0;
+}
+
+/* Smooth entry animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
