@@ -21,7 +21,7 @@ interface HistoryItem {
 
 export default function Dashboard() {
   const { currentProfile, isLoading: isProfileLoading, logout, changePassword } = useProfile();
-  const { t } = useLanguage();
+  const { t, globalLang } = useLanguage();
   const router = useRouter();
   
   const [history, setHistory] = useState<HistoryItem[]>([]);

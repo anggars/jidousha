@@ -7,6 +7,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Trophy, History, Award, Calendar, Activity, Medal, User } from 'lucide-react';
+import { useLanguage } from '@/context/language-context';
 
 interface GlobalHistoryItem {
   id: number;
