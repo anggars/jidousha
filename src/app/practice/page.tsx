@@ -8,7 +8,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, X, AlertCircle, ArrowLeft, ArrowRight, Languages, Activity, Eye, EyeOff } from 'lucide-react';
+import { Check, X, AlertCircle, ArrowLeft, ArrowRight, Languages, Activity, Eye, EyeOff, FileText } from 'lucide-react';
 
 import { ALL_QUESTIONS } from '@/lib/questions';
 
@@ -39,9 +39,9 @@ const DEFAULT_QUESTIONS: Question[] = ALL_QUESTIONS.map((q, idx) => ({
   options_en: q.options.map(opt => opt === 'O' ? 'True' : (opt === 'X' ? 'False' : opt)),
   option_images: q.optionImages || null,
   correct_index: q.correctAnswer,
-  explanation_jp: q.explanation || '',
-  explanation_id: q.explanation || '',
-  explanation_en: q.explanation || '',
+  explanation_jp: q.explanationJp || '',
+  explanation_id: q.explanationId || '',
+  explanation_en: q.explanationEn || '',
   image_url: q.imageUrl || null,
   category: 'Latihan'
 }));
