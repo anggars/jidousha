@@ -86,6 +86,13 @@ export const translations = {
     questionNum: "Question",
     pageTitle: "Jidousha Seibi Practice",
     pageDesc: "Platform for practicing Japan's Tokutei Ginou SSW Jidousha Seibi (Automobile Maintenance & Repair) exam questions.",
+    selectPackageDesc: "Choose the practice package you want to take. The Selected package contains curated questions and summaries, while Regular contains 102 unique questions.",
+    packageSelectedTitle: "Selected Package",
+    packageSelectedDesc: "49 frequently tested summary questions",
+    startSelected: "Start Selected",
+    packageRegularTitle: "Regular Package",
+    packageRegularDesc: "102 complete questions without duplicates",
+    startRegular: "Start Regular",
   },
   id: {
     dashboard: "Dasbor",
@@ -170,6 +177,13 @@ export const translations = {
     questionNum: "Soal",
     pageTitle: "Latihan Soal SSW Jidousha Seibi",
     pageDesc: "Platform latihan soal ujian Tokutei Ginou SSW Jidousha Seibi (Perbaikan & Pemeliharaan Otomotif) Jepang.",
+    selectPackageDesc: "Pilih paket latihan yang ingin Anda kerjakan. Paket Selected berisi soal-soal terpilih dan ringkasan, sedangkan Reguler berisi 102 soal tanpa duplikat.",
+    packageSelectedTitle: "Paket Selected",
+    packageSelectedDesc: "49 soal ringkasan yang sering muncul",
+    startSelected: "Mulai Selected",
+    packageRegularTitle: "Paket Reguler",
+    packageRegularDesc: "102 soal lengkap tanpa duplikat",
+    startRegular: "Mulai Reguler",
   }
 };
 

@@ -10,7 +10,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Button } from '@/components/ui/button';
 import { Check, X, AlertCircle, ArrowLeft, ArrowRight, Languages, Activity, Eye, EyeOff, FileText } from 'lucide-react';
 
-import { ALL_QUESTIONS } from '@/lib/questions';
+import { REGULAR_QUESTIONS as ALL_QUESTIONS } from '@/lib/questions-regular';
 
 interface Question {
   id: number;
@@ -74,53 +74,7 @@ export function PracticeQuizContent() {
   useEffect(() => {
     const fetchQuestions = async () => {
       setIsLoadingQuestions(true);
-      let fetched: Question[] = [];
-
-      if (!isSupabaseConfigured) {
-        fetched = [...DEFAULT_QUESTIONS];
-      } else {
-        try {
-          let query = supabase.from('questions').select('*');
-          if (categoryParam !== 'Semua') {
-            query = query.eq('category', categoryParam);
-          }
-          
-          const { data, error } = await query;
-          if (error) throw error;
-
-          if (data && data.length > 0) {
-            fetched = data.map(q => ({
-              id: Number(q.id),
-              question_jp: q.question_jp,
-              question_id: q.question_id,
-              question_en: q.question_en,
-              options_jp: typeof q.options_jp === 'string' ? JSON.parse(q.options_jp) : q.options_jp,
-              options_id: typeof q.options_id === 'string' ? JSON.parse(q.options_id) : q.options_id,
-              options_en: typeof q.options_en === 'string' ? JSON.parse(q.options_en) : q.options_en,
-              option_images: q.option_images ? (typeof q.option_images === 'string' ? JSON.parse(q.option_images) : q.option_images) : null,
-              correct_index: q.correct_index,
-              explanation_jp: q.explanation_jp || '',
-              explanation_id: q.explanation_id || '',
-              explanation_en: q.explanation_en || '',
-              image_url: q.image_url,
-              category: q.category
-            }));
-          } else {
-            fetched = [...DEFAULT_QUESTIONS];
-          }
-        } catch (err) {
-          console.error('Error fetching questions:', err);
-          fetched = [...DEFAULT_QUESTIONS];
-        }
-      }
-
-      if (categoryParam !== 'Semua') {
-        fetched = fetched.filter(q => q.category === categoryParam);
-      }
-
-      if (fetched.length === 0) {
-        fetched = [...DEFAULT_QUESTIONS];
-      }
+      let fetched: Question[] = [...DEFAULT_QUESTIONS];
 
       // Load all questions sequentially according to their original ID order
       fetched.sort((a, b) => a.id - b.id);

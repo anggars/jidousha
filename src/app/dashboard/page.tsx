@@ -133,8 +133,12 @@ export default function Dashboard() {
     ? Math.round((totalCorrect / totalAnswered) * 100)
     : 0;
 
-  const startQuiz = () => {
+  const startSelectedQuiz = () => {
     router.push('/practice');
+  };
+
+  const startRegularQuiz = () => {
+    router.push('/practice/regular');
   };
 
   return (
@@ -223,17 +227,39 @@ export default function Dashboard() {
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold text-zinc-100">{t('practiceSession')}</h2>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  {t('practiceSessionDesc')}
+                  {t('selectPackageDesc')}
                 </p>
                 <div className="border border-zinc-900 rounded-lg p-4 bg-zinc-950/20 text-xs text-zinc-400 leading-relaxed">
                   {t('practiceNote')}
                 </div>
-                <Button 
-                  onClick={startQuiz} 
-                  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold h-11"
-                >
-                  {t('startPractice')}
-                </Button>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                  <div className="border border-zinc-800 rounded-xl p-5 bg-zinc-900/20 hover:bg-zinc-900/40 transition-colors flex flex-col justify-between h-full gap-4">
+                    <div>
+                      <h3 className="font-bold text-lg text-blue-400 mb-1">{t('packageSelectedTitle')}</h3>
+                      <p className="text-xs text-zinc-400">{t('packageSelectedDesc')}</p>
+                    </div>
+                    <Button 
+                      onClick={startSelectedQuiz} 
+                      className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold h-10"
+                    >
+                      {t('startSelected')}
+                    </Button>
+                  </div>
+                  
+                  <div className="border border-zinc-800 rounded-xl p-5 bg-zinc-900/20 hover:bg-zinc-900/40 transition-colors flex flex-col justify-between h-full gap-4">
+                    <div>
+                      <h3 className="font-bold text-lg text-purple-400 mb-1">{t('packageRegularTitle')}</h3>
+                      <p className="text-xs text-zinc-400">{t('packageRegularDesc')}</p>
+                    </div>
+                    <Button 
+                      onClick={startRegularQuiz} 
+                      className="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold h-10"
+                    >
+                      {t('startRegular')}
+                    </Button>
+                  </div>
+                </div>
               </div>
             </Card>
           </div>

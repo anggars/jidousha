@@ -5,8 +5,8 @@ import { LanguageProvider } from "@/context/language-context";
 import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Latihan Soal SSW Jidousha Seibi",
-  description: "Platform latihan soal ujian Tokutei Ginou SSW Jidousha Seibi (Perbaikan & Pemeliharaan Otomotif) Jepang.",
+  title: "Jidousha Seibi",
+  description: "Platform for practicing Japan's Tokutei Ginou SSW Jidousha Seibi (Automobile Maintenance & Repair) exam questions.",
 };
 
 export default function RootLayout({
