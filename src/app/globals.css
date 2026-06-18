@@ -8,34 +8,34 @@
   /* Font Family */
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 
-  /* True Black Theme Colors */
-  --color-background: #000000;
-  --color-foreground: #f4f4f5;
+  /* Theme Colors Linked to CSS Variables */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
 
-  --color-card: #09090b;
-  --color-card-foreground: #f4f4f5;
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
 
-  --color-popover: #09090b;
-  --color-popover-foreground: #f4f4f5;
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
 
-  --color-primary: #3b82f6;
-  --color-primary-foreground: #ffffff;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: #18181b;
-  --color-secondary-foreground: #f4f4f5;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-muted: #18181b;
-  --color-muted-foreground: #a1a1aa;
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 
-  --color-accent: #27272a;
-  --color-accent-foreground: #f4f4f5;
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
 
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #ffffff;
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
 
-  --color-border: #27272a;
-  --color-input: #27272a;
-  --color-ring: #3b82f6;
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
   /* Border Radius */
   --radius-lg: 0.75rem;
@@ -46,34 +46,56 @@
   --transition-all: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 0%;
-    --foreground: 240 5% 96%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 240 5% 96%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 240 5% 96%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 240 5% 96%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 240 5% 96%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 85.5 100% 96%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 5% 64.9%;
-  }
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #09090b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #09090b;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #2563eb;
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #f4f4f5;
+  --card: #09090b;
+  --card-foreground: #f4f4f5;
+  --popover: #09090b;
+  --popover-foreground: #f4f4f5;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #18181b;
+  --secondary-foreground: #f4f4f5;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --accent: #27272a;
+  --accent-foreground: #f4f4f5;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #3b82f6;
 }
 
 /* Base Body Styles */
 body {
-  background-color: #000000;
-  color: #f4f4f5;
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   min-height: 100vh;
   overflow-x: hidden;
@@ -87,16 +109,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: var(--border);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: var(--muted-foreground);
 }
 
 /* Subtle glowing layout wrappers */
@@ -112,7 +134,7 @@ body {
   right: 0;
   bottom: 0;
   pointer-events: none;
-  background: radial-gradient(circle 800px at 50% -200px, rgba(59, 130, 246, 0.08), transparent 80%);
+  background: radial-gradient(circle 800px at 50% -200px, rgba(59, 130, 246, 0.05), transparent 80%);
   z-index: 0;
 }
 

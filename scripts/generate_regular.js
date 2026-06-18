@@ -325,14 +325,14 @@ const rawText = `
 
 const questions = [];
 
-const lines = rawText.split('\\n');
+const lines = rawText.split('\n');
 let currentQ = null;
 
 for (let i = 0; i < lines.length; i++) {
   const line = lines[i].trim();
   if (!line) continue;
   
-  const match = line.match(/^(\\d+)\\.\\s+(.*)/);
+  const match = line.match(/^(\d+)\.\s+(.*)/);
   if (match) {
     if (currentQ) questions.push(currentQ);
     currentQ = {
@@ -366,9 +366,11 @@ const finalQuestions = questions.map(q => {
   const qObj = {
     id: "q" + q.id,
     japanese: q.japanese,
-    indonesian: "Soal Regulasi SSW",
-    english: "SSW Regulation Question",
+    indonesian: "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
+    english: "SSW Regulation Question (Translation will be added if available)",
     options: ["O", "X"],
+    optionsIndonesian: ["Benar", "Salah"],
+    optionsEnglish: ["True", "False"],
     correctAnswer: q.correctAnswer,
     explanationJp: "",
     explanationId: "",
@@ -408,6 +410,14 @@ finalQuestions.push({
     "シリンダ・ヘッド・ガスケットは、交換しないので取り外しに注意する。",
     "シリンダ・ヘッド・ボルトは、長さや太さが違うものがあるので、組み立て時に分かるように注意する。"
   ],
+  optionsIndonesian: [
+    "Karena cylinder head gasket tidak diganti, berhati-hatilah saat melepasnya.",
+    "Karena panjang dan ketebalan baut cylinder head berbeda-beda, berhati-hatilah agar dapat dibedakan saat perakitan."
+  ],
+  optionsEnglish: [
+    "Since the cylinder head gasket is not replaced, be careful when removing it.",
+    "Since the length and thickness of the cylinder head bolts differ, be careful so they can be identified during assembly."
+  ],
   correctAnswer: 1,
   explanationJp: "",
   explanationId: "",
@@ -423,6 +433,14 @@ finalQuestions.push({
     "シリンダ・ブロックのボルト穴にたまった冷却水やオイルなどは、こぼさないように注意する。",
     "シリンダ・ヘッド・ボルトのねじ部に薄くオイルを塗る。"
   ],
+  optionsIndonesian: [
+    "Berhati-hatilah agar air pendingin atau oli yang terkumpul di lubang baut blok silinder tidak tumpah.",
+    "Oleskan sedikit oli pada bagian berulir dari baut cylinder head."
+  ],
+  optionsEnglish: [
+    "Be careful not to spill cooling water or oil that has accumulated in the bolt holes of the cylinder block.",
+    "Apply a thin layer of oil to the threaded portion of the cylinder head bolts."
+  ],
   correctAnswer: 1,
   explanationJp: "",
   explanationId: "",
@@ -434,7 +452,9 @@ finalQuestions.push({
   japanese: "シリンダ・ヘッド・ボルトを締め付ける正しい順番は、どれか。",
   indonesian: "Urutan yang benar untuk mengencangkan baut cylinder head adalah?",
   english: "Which is the correct order to tighten the cylinder head bolts?",
-  options: ["Opsi 1", "Opsi 2"],
+  options: ["A", "B"],
+  optionsIndonesian: ["Pilihan A", "Pilihan B"],
+  optionsEnglish: ["Option A", "Option B"],
   optionImages: ["/regular/p97a.jpg", "/regular/p97b.jpg"],
   correctAnswer: 0,
   explanationJp: "",
@@ -451,6 +471,14 @@ finalQuestions.push({
     "プローブの赤色は、測定用ターミナルの「＋」に取り付ける。",
     "プローブの赤色は、測定用ターミナルの「－」に取り付ける。"
   ],
+  optionsIndonesian: [
+    "Probe merah dipasang ke terminal ukur '+'.",
+    "Probe merah dipasang ke terminal ukur '-'."
+  ],
+  optionsEnglish: [
+    "The red probe is attached to the '+' measuring terminal.",
+    "The red probe is attached to the '-' measuring terminal."
+  ],
   correctAnswer: 0,
   explanationJp: "",
   explanationId: "",
@@ -462,7 +490,9 @@ finalQuestions.push({
   japanese: "マイクロメータは、どれか。",
   indonesian: "Manakah yang merupakan mikrometer?",
   english: "Which one is a micrometer?",
-  options: ["Opsi 1", "Opsi 2"],
+  options: ["A", "B"],
+  optionsIndonesian: ["Pilihan A", "Pilihan B"],
+  optionsEnglish: ["Option A", "Option B"],
   optionImages: ["/regular/p99a.jpg", "/regular/p99b.jpg"],
   correctAnswer: 0,
   explanationJp: "",
@@ -475,7 +505,9 @@ finalQuestions.push({
   japanese: "バルブ・ステムの外径は、どこか。",
   indonesian: "Di manakah diameter luar valve stem?",
   english: "Where is the outer diameter of the valve stem?",
-  options: ["Opsi 1", "Opsi 2"],
+  options: ["A", "B"],
+  optionsIndonesian: ["Pilihan A", "Pilihan B"],
+  optionsEnglish: ["Option A", "Option B"],
   optionImages: ["/regular/p100a.jpg", "/regular/p100b.jpg"],
   correctAnswer: 0,
   explanationJp: "",
@@ -489,6 +521,8 @@ finalQuestions.push({
   indonesian: "Nilai pengukuran diameter luar valve stem dengan mikrometer yang benar adalah?",
   english: "Which is the correct measurement of the valve stem's outer diameter using a micrometer?",
   options: ["5.85mm", "5.35mm"],
+  optionsIndonesian: ["5.85mm", "5.35mm"],
+  optionsEnglish: ["5.85mm", "5.35mm"],
   imageUrl: "/regular/p101.jpg",
   correctAnswer: 0,
   explanationJp: "",
@@ -502,6 +536,8 @@ finalQuestions.push({
   indonesian: "Bagaimana hasil pengukuran jangka sorong?",
   english: "What is the result of the vernier caliper measurement?",
   options: ["09.65mm", "11.65mm"],
+  optionsIndonesian: ["09.65mm", "11.65mm"],
+  optionsEnglish: ["09.65mm", "11.65mm"],
   imageUrl: "/regular/p102.jpg",
   correctAnswer: 1,
   explanationJp: "",

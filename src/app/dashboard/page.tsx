@@ -112,9 +112,9 @@ export default function Dashboard() {
 
   if (isProfileLoading || !currentProfile) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-black">
-        <div className="w-8 h-8 border-2 border-zinc-800 border-t-blue-500 rounded-full animate-spin"></div>
-        <p className="mt-4 text-sm text-zinc-400 font-medium">{t('loading')}</p>
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background">
+        <div className="w-8 h-8 border-2 border-border border-t-primary rounded-full animate-spin"></div>
+        <p className="mt-4 text-sm text-muted-foreground font-medium">{t('loading')}</p>
       </div>
     );
   }
@@ -142,19 +142,19 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-70px)] bg-black py-8 px-4 sm:px-6 lg:px-8 glow-wrapper">
+    <div className="min-h-[calc(100vh-70px)] bg-background py-8 px-4 sm:px-6 lg:px-8 glow-wrapper">
       <div className="max-w-5xl mx-auto space-y-8 animate-fade-in relative z-10">
         
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 bg-zinc-950/50 p-6 rounded-2xl border border-zinc-900">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 bg-secondary/50 p-6 rounded-2xl border border-border">
           <div className="flex items-center gap-6">
-            <div className="w-20 h-20 rounded-full bg-zinc-900 border-2 border-zinc-800 flex items-center justify-center text-3xl font-bold text-zinc-300 uppercase shadow-[0_0_30px_rgba(59,130,246,0.15)] relative">
+            <div className="w-20 h-20 rounded-full bg-secondary border-2 border-border flex items-center justify-center text-3xl font-bold text-muted-foreground uppercase shadow-sm relative">
               {currentProfile.name.charAt(0)}
-              <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-4 border-black"></div>
+              <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 rounded-full border-4 border-background"></div>
             </div>
             <div>
-              <p className="text-sm font-medium text-blue-500 mb-1">{t('welcome')},</p>
-              <h1 className="text-3xl font-extrabold text-zinc-100 tracking-tight">{currentProfile.name}</h1>
+              <p className="text-sm font-medium text-primary mb-1">{t('welcome')},</p>
+              <h1 className="text-3xl font-extrabold text-foreground tracking-tight">{currentProfile.name}</h1>
             </div>
           </div>
           
@@ -162,7 +162,7 @@ export default function Dashboard() {
             <Button 
               variant="outline" 
               onClick={() => setIsSettingsOpen(true)}
-              className="border-zinc-800 text-zinc-300 hover:text-white bg-zinc-950 hover:bg-zinc-900 h-10"
+              className="border-border text-foreground hover:bg-secondary h-10"
             >
               <Settings className="w-4 h-4 mr-2" />
               {t('settings')}
@@ -170,7 +170,7 @@ export default function Dashboard() {
             <Button 
               variant="outline" 
               onClick={handleLogout}
-              className="border-red-950/50 text-red-400 hover:text-red-300 bg-red-950/20 hover:bg-red-950/40 h-10"
+              className="border-destructive/50 text-destructive hover:bg-destructive/10 h-10"
             >
               <LogOut className="w-4 h-4 mr-2" />
               {t('signOut')}
@@ -180,41 +180,41 @@ export default function Dashboard() {
 
         {/* Stats Overview */}
         <div>
-          <h2 className="text-lg font-bold text-zinc-200 mb-4 flex items-center gap-2">
-            <BarChart2 className="w-5 h-5 text-blue-500" />
+          <h2 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+            <BarChart2 className="w-5 h-5 text-primary" />
             {t('performanceOverview')}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <Card className="bg-zinc-950 border-zinc-800">
+            <Card className="bg-card border-border">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <span className="text-sm font-semibold text-zinc-400 uppercase tracking-wider">Total Attempts</span>
-                <BarChart2 className="w-4 h-4 text-blue-500" />
+                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Total Attempts</span>
+                <BarChart2 className="w-4 h-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-zinc-100">{history.length}</div>
-                <p className="text-xs text-zinc-500 mt-1">{t('examsCompleted')}</p>
+                <div className="text-2xl font-bold text-foreground">{history.length}</div>
+                <p className="text-xs text-muted-foreground mt-1">{t('examsCompleted')}</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-zinc-950 border-zinc-800">
+            <Card className="bg-card border-border">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <span className="text-sm font-semibold text-zinc-400 uppercase tracking-wider">Average Score</span>
-                <Award className="w-4 h-4 text-blue-500" />
+                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Average Score</span>
+                <Award className="w-4 h-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-zinc-100">{averageScore}%</div>
-                <p className="text-xs text-zinc-500 mt-1">{t('avgCorrectness')}</p>
+                <div className="text-2xl font-bold text-foreground">{averageScore}%</div>
+                <p className="text-xs text-muted-foreground mt-1">{t('avgCorrectness')}</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-zinc-950 border-zinc-800">
+            <Card className="bg-card border-border">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <span className="text-sm font-semibold text-zinc-400 uppercase tracking-wider">Accuracy</span>
-                <Percent className="w-4 h-4 text-blue-500" />
+                <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Accuracy</span>
+                <Percent className="w-4 h-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-zinc-100">{accuracy}%</div>
-                <p className="text-xs text-zinc-500 mt-1">{t('accuracyRate')}</p>
+                <div className="text-2xl font-bold text-foreground">{accuracy}%</div>
+                <p className="text-xs text-muted-foreground mt-1">{t('accuracyRate')}</p>
               </CardContent>
             </Card>
           </div>
@@ -223,34 +223,34 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Action Area */}
           <div className="lg:col-span-2 space-y-6">
-            <Card className="bg-zinc-950 border-zinc-800 p-6">
+            <Card className="bg-card border-border p-6">
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-zinc-100">{t('practiceSession')}</h2>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <h2 className="text-2xl font-bold text-foreground">{t('practiceSession')}</h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {t('selectPackageDesc')}
                 </p>
-                <div className="border border-zinc-900 rounded-lg p-4 bg-zinc-950/20 text-xs text-zinc-400 leading-relaxed">
+                <div className="border border-border rounded-lg p-4 bg-secondary/50 text-xs text-muted-foreground leading-relaxed">
                   {t('practiceNote')}
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <div className="border border-zinc-800 rounded-xl p-5 bg-zinc-900/20 hover:bg-zinc-900/40 transition-colors flex flex-col justify-between h-full gap-4">
+                  <div className="border border-border rounded-xl p-5 bg-secondary/30 hover:bg-secondary transition-colors flex flex-col justify-between h-full gap-4">
                     <div>
-                      <h3 className="font-bold text-lg text-blue-400 mb-1">{t('packageSelectedTitle')}</h3>
-                      <p className="text-xs text-zinc-400">{t('packageSelectedDesc')}</p>
+                      <h3 className="font-bold text-lg text-primary mb-1">{t('packageSelectedTitle')}</h3>
+                      <p className="text-xs text-muted-foreground">{t('packageSelectedDesc')}</p>
                     </div>
                     <Button 
                       onClick={startSelectedQuiz} 
-                      className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold h-10"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-10"
                     >
                       {t('startSelected')}
                     </Button>
                   </div>
                   
-                  <div className="border border-zinc-800 rounded-xl p-5 bg-zinc-900/20 hover:bg-zinc-900/40 transition-colors flex flex-col justify-between h-full gap-4">
+                  <div className="border border-border rounded-xl p-5 bg-secondary/30 hover:bg-secondary transition-colors flex flex-col justify-between h-full gap-4">
                     <div>
-                      <h3 className="font-bold text-lg text-purple-400 mb-1">{t('packageRegularTitle')}</h3>
-                      <p className="text-xs text-zinc-400">{t('packageRegularDesc')}</p>
+                      <h3 className="font-bold text-lg text-purple-600 dark:text-purple-400 mb-1">{t('packageRegularTitle')}</h3>
+                      <p className="text-xs text-muted-foreground">{t('packageRegularDesc')}</p>
                     </div>
                     <Button 
                       onClick={startRegularQuiz} 
@@ -266,35 +266,35 @@ export default function Dashboard() {
 
           {/* History Column */}
           <div className="space-y-6">
-            <Card className="bg-zinc-950 border-zinc-800 p-6 flex flex-col h-full">
+            <Card className="bg-card border-border p-6 flex flex-col h-full">
               <div className="space-y-4 flex-1">
-                <h2 className="text-xl font-bold text-zinc-100">Recent History</h2>
+                <h2 className="text-xl font-bold text-foreground">Recent History</h2>
                 
                 {isLoadingHistory ? (
                   <div className="flex justify-center py-8">
-                    <div className="w-5 h-5 border-2 border-zinc-800 border-t-blue-500 rounded-full animate-spin"></div>
+                    <div className="w-5 h-5 border-2 border-border border-t-primary rounded-full animate-spin"></div>
                   </div>
                 ) : history.length === 0 ? (
-                  <div className="text-center py-8 border border-dashed border-zinc-900 rounded-lg">
-                    <p className="text-sm text-zinc-500">No practice history found.</p>
+                  <div className="text-center py-8 border border-dashed border-border rounded-lg">
+                    <p className="text-sm text-muted-foreground">No practice history found.</p>
                   </div>
                 ) : (
                   <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1">
                     {history.map((item) => {
                       const statusColor = item.score >= 80 
-                        ? 'bg-green-950/20 border-green-900/50 text-green-400' 
-                        : 'bg-red-950/20 border-red-900/50 text-red-400';
+                        ? 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400' 
+                        : 'bg-destructive/10 border-destructive/20 text-destructive dark:text-red-400';
                       
                       return (
-                        <div key={item.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-6 hover:bg-zinc-900/40 transition-colors gap-4">
+                        <div key={item.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-6 hover:bg-secondary/50 transition-colors gap-4 border border-transparent hover:border-border rounded-lg">
                           <div className="flex flex-col gap-1">
-                            <span className="text-sm font-bold text-zinc-200">
+                            <span className="text-sm font-bold text-foreground">
                               {new Date(item.created_at).toLocaleDateString(globalLang === 'id' ? 'id-ID' : 'en-US', {
                                 weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
                                 hour: '2-digit', minute: '2-digit'
                               })}
                             </span>
-                            <span className="text-xs text-zinc-500">
+                            <span className="text-xs text-muted-foreground">
                               {item.answered_correctly} / {item.total_questions} {t('correct').toLowerCase()}
                             </span>
                           </div>
@@ -315,29 +315,29 @@ export default function Dashboard() {
 
         {/* Change Password Dialog */}
         <Dialog open={isSettingsOpen} onOpenChange={setIsSettingsOpen}>
-          <DialogContent className="bg-zinc-950 border-zinc-800 text-zinc-100 sm:max-w-md">
+          <DialogContent className="bg-card border-border text-foreground sm:max-w-md">
             <DialogHeader>
               <DialogTitle className="flex items-center gap-2 text-xl">
-                <Settings className="w-5 h-5 text-blue-500" />
+                <Settings className="w-5 h-5 text-primary" />
                 {t('settings')}
               </DialogTitle>
-              <DialogDescription className="text-zinc-400">
+              <DialogDescription className="text-muted-foreground">
                 {t('changePasswordDesc')}
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSavePassword} className="space-y-4 mt-4">
               {passwordError && (
-                <div className="p-3 rounded-md bg-red-950/30 border border-red-900/50 text-xs text-red-400 font-medium animate-fade-in">
+                <div className="p-3 rounded-md bg-destructive/10 border border-destructive/20 text-xs text-destructive font-medium animate-fade-in">
                   {passwordError}
                 </div>
               )}
               {passwordSuccess && (
-                <div className="p-3 rounded-md bg-green-950/30 border border-green-900/50 text-xs text-green-400 font-medium animate-fade-in">
+                <div className="p-3 rounded-md bg-green-500/10 border border-green-500/20 text-xs text-green-600 dark:text-green-400 font-medium animate-fade-in">
                   {passwordSuccess}
                 </div>
               )}
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1.5">
+                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
                   <Key className="w-3.5 h-3.5" />
                   {t('newPassword')}
                 </label>
@@ -347,7 +347,7 @@ export default function Dashboard() {
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   disabled={isSavingPassword}
-                  className="bg-black border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                 />
               </div>
               <DialogFooter className="mt-6">
@@ -356,14 +356,14 @@ export default function Dashboard() {
                   variant="outline" 
                   onClick={() => setIsSettingsOpen(false)}
                   disabled={isSavingPassword}
-                  className="border-zinc-800 text-zinc-300 hover:text-white"
+                  className="border-border text-foreground"
                 >
                   {t('cancel')}
                 </Button>
                 <Button 
                   type="submit"
                   disabled={isSavingPassword}
-                  className="bg-blue-600 hover:bg-blue-500 text-white font-semibold"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
                 >
                   {isSavingPassword ? t('saving') : t('saveChanges')}
                 </Button>

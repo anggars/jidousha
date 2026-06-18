@@ -53,45 +53,45 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-black">
-        <div className="w-8 h-8 border-2 border-zinc-800 border-t-blue-500 rounded-full animate-spin"></div>
-        <p className="mt-4 text-sm text-zinc-400 font-medium">Loading session...</p>
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background">
+        <div className="w-8 h-8 border-2 border-border border-t-primary rounded-full animate-spin"></div>
+        <p className="mt-4 text-sm text-muted-foreground font-medium">Loading session...</p>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-black px-4 glow-wrapper">
-      <div className="w-full max-w-md animate-fade-in z-10">
-        <div className="text-center mb-8">
-          <span className="inline-block px-3 py-1 bg-blue-950/40 border border-blue-900/50 rounded-full text-xs font-bold text-blue-400 uppercase tracking-widest mb-3">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background px-4 glow-wrapper">
+      <div className="w-full max-w-md animate-fade-in z-10 py-4">
+        <div className="text-center mb-6">
+          <span className="inline-block px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs font-bold text-primary uppercase tracking-widest mb-3">
             Tokutei Ginou
           </span>
-          <h1 className="text-3xl font-extrabold text-zinc-100 tracking-tight mb-2">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight mb-2">
             SSW Jidousha Seibi
           </h1>
-          <p className="text-sm text-zinc-400">
+          <p className="text-sm text-muted-foreground">
             {t('portalDesc')}
           </p>
         </div>
 
-        <Card className="border-zinc-800 bg-zinc-950">
-          <CardHeader className="space-y-1">
-            <CardTitle className="text-xl font-bold text-zinc-100">{t('signIn')}</CardTitle>
-            <CardDescription className="text-zinc-500">
+        <Card className="border-border bg-card">
+          <CardHeader className="space-y-1 pb-4">
+            <CardTitle className="text-xl font-bold text-foreground">{t('signIn')}</CardTitle>
+            <CardDescription className="text-muted-foreground text-xs sm:text-sm">
               {t('credentialsDesc')}
             </CardDescription>
           </CardHeader>
           <form onSubmit={handleSubmit}>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-3 pb-4">
               {errorMsg && (
-                <div className="p-3 rounded-md bg-red-950/30 border border-red-900/50 text-sm text-red-400 font-medium animate-fade-in">
+                <div className="p-3 rounded-md bg-destructive/10 border border-destructive/20 text-sm text-destructive font-medium animate-fade-in">
                   {errorMsg}
                 </div>
               )}
               
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   {t('username')}
                 </label>
                 <Input
@@ -100,12 +100,12 @@ export default function Home() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   disabled={isSubmitting}
-                  className="bg-black border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground h-10"
                 />
               </div>
 
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   {t('password')}
                 </label>
                 <Input
@@ -114,7 +114,7 @@ export default function Home() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={isSubmitting}
-                  className="bg-black border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground h-10"
                 />
               </div>
 
@@ -124,7 +124,7 @@ export default function Home() {
               <Button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-500 text-white"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-10"
               >
                 {isSubmitting ? t('signingIn') : t('signIn')}
               </Button>

@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ProfileProvider } from "@/context/profile-context";
 import { LanguageProvider } from "@/context/language-context";
+import { ThemeProvider } from "next-themes";
 import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Jidousha Seibi",
-  description: "Platform for practicing Japan's Tokutei Ginou SSW Jidousha Seibi (Automobile Maintenance & Repair) exam questions.",
+  description: "Practice platform for the Tokutei Ginou SSW Jidousha Seibi (Automobile Repair & Maintenance) exam in Japan.",
 };
 
 export default function RootLayout({
@@ -15,16 +16,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" suppressHydrationWarning>
       <body>
-        <LanguageProvider>
-          <ProfileProvider>
-            <Header />
-            <main className="main-content-layout">
-              {children}
-            </main>
-          </ProfileProvider>
-        </LanguageProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <LanguageProvider>
+            <ProfileProvider>
+              <Header />
+              <main className="main-content-layout">
+                {children}
+              </main>
+            </ProfileProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

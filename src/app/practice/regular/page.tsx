@@ -35,8 +35,8 @@ const DEFAULT_QUESTIONS: Question[] = ALL_QUESTIONS.map((q, idx) => ({
   question_id: q.indonesian,
   question_en: q.english || '',
   options_jp: q.options,
-  options_id: q.options.map(opt => opt === 'O' ? 'Benar' : (opt === 'X' ? 'Salah' : opt)),
-  options_en: q.options.map(opt => opt === 'O' ? 'True' : (opt === 'X' ? 'False' : opt)),
+  options_id: q.optionsIndonesian || q.options.map(opt => opt === 'O' ? 'Benar' : (opt === 'X' ? 'Salah' : opt)),
+  options_en: q.optionsEnglish || q.options.map(opt => opt === 'O' ? 'True' : (opt === 'X' ? 'False' : opt)),
   option_images: q.optionImages || null,
   correct_index: q.correctAnswer,
   explanation_jp: q.explanationJp || '',
@@ -94,20 +94,20 @@ export function PracticeQuizContent() {
 
   if (isProfileLoading || isLoadingQuestions) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-black">
-        <div className="w-8 h-8 border-2 border-zinc-800 border-t-blue-500 rounded-full animate-spin"></div>
-        <p className="mt-4 text-sm text-zinc-400 font-medium">{t('generatingPractice')}</p>
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background">
+        <div className="w-8 h-8 border-2 border-border border-t-primary rounded-full animate-spin"></div>
+        <p className="mt-4 text-sm text-muted-foreground font-medium">{t('generatingPractice')}</p>
       </div>
     );
   }
 
   if (questions.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-black px-4 text-center">
-        <AlertCircle className="w-12 h-12 text-red-500 mb-4" />
-        <h2 className="text-xl font-bold text-zinc-100 mb-2">{t('noQuestions')}</h2>
-        <p className="text-sm text-zinc-400 max-w-md mb-6">{t('noQuestionsDesc')}</p>
-        <Button onClick={() => router.push('/dashboard')} className="bg-blue-600 hover:bg-blue-500 text-white font-semibold">
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background px-4 text-center">
+        <AlertCircle className="w-12 h-12 text-destructive mb-4" />
+        <h2 className="text-xl font-bold text-foreground mb-2">{t('noQuestions')}</h2>
+        <p className="text-sm text-muted-foreground max-w-md mb-6">{t('noQuestionsDesc')}</p>
+        <Button onClick={() => router.push('/dashboard')} className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold">
           {t('backToDashboard')}
         </Button>
       </div>
@@ -189,50 +189,50 @@ export function PracticeQuizContent() {
     const passed = finalScore >= 80;
 
     return (
-      <div className="min-h-[calc(100vh-70px)] bg-black py-8 px-4 sm:px-6 lg:px-8 glow-wrapper">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in relative z-10">
+      <div className="flex flex-col justify-center min-h-[calc(100vh-70px)] bg-background py-8 px-4 sm:px-6 lg:px-8 glow-wrapper">
+        <div className="max-w-4xl w-full mx-auto space-y-8 animate-fade-in relative z-10">
           
-          <Card className="bg-zinc-950 border-zinc-800 p-8 text-center space-y-6">
+          <Card className="bg-card border-border p-8 text-center space-y-6">
             <div className="flex justify-center">
               <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold border uppercase tracking-widest ${
                 passed 
-                  ? 'bg-green-950/30 border-green-900/50 text-green-400' 
-                  : 'bg-red-950/30 border-red-900/50 text-red-400'
+                  ? 'bg-green-500/10 border-green-500/20 text-green-500 dark:text-green-400' 
+                  : 'bg-destructive/10 border-destructive/20 text-destructive dark:text-red-400'
               }`}>
                 {passed ? 'Passed' : 'Needs Practice'}
               </span>
             </div>
             
             <div className="space-y-2">
-              <h1 className="text-3xl font-extrabold text-zinc-100 tracking-tight">
+              <h1 className="text-3xl font-extrabold text-foreground tracking-tight">
                 {t('sessionCompleted')}
               </h1>
-              <p className="text-sm text-zinc-400">
+              <p className="text-sm text-muted-foreground">
                 {t('sessionDesc')}
               </p>
             </div>
 
             <div className="flex justify-center py-4">
               <div className={`w-32 h-32 rounded-full border-4 flex flex-col items-center justify-center ${
-                passed ? 'border-green-600 bg-green-950/10' : 'border-red-600 bg-red-950/10'
+                passed ? 'border-green-500 bg-green-500/5' : 'border-destructive bg-destructive/5'
               }`}>
-                <span className="text-3xl font-bold text-zinc-100">{finalScore}%</span>
-                <span className="text-[10px] text-zinc-400 uppercase font-semibold">{t('finalScore')}</span>
+                <span className="text-3xl font-bold text-foreground">{finalScore}%</span>
+                <span className="text-[10px] text-muted-foreground uppercase font-semibold">{t('finalScore')}</span>
               </div>
             </div>
 
             <div className="grid grid-cols-3 gap-4 max-w-md mx-auto py-2">
-              <div className="bg-zinc-900/40 border border-zinc-900 rounded-lg p-3">
-                <span className="block text-lg font-bold text-zinc-200">{questions.length}</span>
-                <span className="text-[10px] text-zinc-500 uppercase">{t('totalQuestions')}</span>
+              <div className="bg-secondary/50 border border-border rounded-lg p-3">
+                <span className="block text-lg font-bold text-foreground">{questions.length}</span>
+                <span className="text-[10px] text-muted-foreground uppercase">{t('totalQuestions')}</span>
               </div>
-              <div className="bg-zinc-900/40 border border-zinc-900 rounded-lg p-3">
-                <span className="block text-lg font-bold text-green-400">{scoreCount}</span>
-                <span className="text-[10px] text-zinc-500 uppercase">{t('correct')}</span>
+              <div className="bg-secondary/50 border border-border rounded-lg p-3">
+                <span className="block text-lg font-bold text-green-500 dark:text-green-400">{scoreCount}</span>
+                <span className="text-[10px] text-muted-foreground uppercase">{t('correct')}</span>
               </div>
-              <div className="bg-zinc-900/40 border border-zinc-900 rounded-lg p-3">
-                <span className="block text-lg font-bold text-red-400">{questions.length - scoreCount}</span>
-                <span className="text-[10px] text-zinc-500 uppercase">{t('incorrect')}</span>
+              <div className="bg-secondary/50 border border-border rounded-lg p-3">
+                <span className="block text-lg font-bold text-destructive dark:text-red-400">{questions.length - scoreCount}</span>
+                <span className="text-[10px] text-muted-foreground uppercase">{t('incorrect')}</span>
               </div>
             </div>
 
@@ -241,29 +241,29 @@ export function PracticeQuizContent() {
                 <Button 
                   variant="outline" 
                   onClick={() => router.push('/dashboard')}
-                  className="border-zinc-800 text-zinc-300 hover:text-white"
+                  className="border-border text-foreground hover:bg-secondary"
                 >
                   {t('goToDashboard')}
                 </Button>
               ) : (
                 <Button 
                   variant="outline" 
-                  onClick={() => window.open('https://t.me/Angga', '_blank')}
-                  className="border-blue-800 text-blue-400 hover:text-blue-300 hover:bg-blue-950/30"
+                  onClick={() => window.location.href = 'mailto:anggarnts@gmail.com'}
+                  className="border-primary/50 text-primary hover:bg-primary/10"
                 >
                   {t('requestAccess')}
                 </Button>
               )}
               <Button 
                 onClick={() => window.location.reload()}
-                className="bg-blue-600 hover:bg-blue-500 text-white font-bold"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
               >
                 {t('practiceAgain')}
               </Button>
             </div>
             
             {!currentProfile && (
-              <div className="pt-2 text-sm text-zinc-400">
+              <div className="pt-2 text-sm text-muted-foreground">
                 {t('guestEndMsg')}
                 <br/>
                 {t('contactAdminMsg')}
@@ -272,24 +272,24 @@ export function PracticeQuizContent() {
           </Card>
 
           {/* Detailed Question Review Section */}
-          <Card className="bg-zinc-950 border-zinc-800 p-6 sm:p-8 space-y-6 animate-scale-in">
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-zinc-800">
+          <Card className="bg-card border-border p-6 sm:p-8 space-y-6 animate-scale-in">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-4 border-b border-border">
               <div>
-                <h2 className="text-xl font-bold text-zinc-100 flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-blue-500" />
+                <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-primary" />
                   {t('detailedReview')}
                 </h2>
-                <p className="text-xs text-zinc-400">
+                <p className="text-xs text-muted-foreground">
                   {globalLang === 'en' ? 'Study the details and translations for each question to improve.' : 'Pelajari detail dan terjemahan setiap pertanyaan untuk meningkat.'}
                 </p>
               </div>
               
-              <div className="flex items-center gap-2 bg-zinc-950 border border-zinc-800 rounded-lg p-1">
-                <span className="text-xs text-zinc-500 font-semibold px-2">Global Language: {globalLang.toUpperCase()}</span>
+              <div className="flex items-center gap-2 bg-secondary border border-border rounded-lg p-1">
+                <span className="text-xs text-muted-foreground font-semibold px-2">Global Language: {globalLang.toUpperCase()}</span>
               </div>
             </div>
 
-            <div className="divide-y divide-zinc-900 space-y-8">
+            <div className="divide-y divide-border space-y-8">
               {questions.map((q, idx) => {
                 const ansRecord = userAnswers.find(a => a.question_id === q.id) || { selected: -1, correct: false };
                 const qTranslated = globalLang === 'en' ? q.question_en : q.question_id;
@@ -298,14 +298,14 @@ export function PracticeQuizContent() {
                   <div key={q.id} className="pt-8 first:pt-0 space-y-4">
                     <div className="flex justify-between items-start gap-4">
                       <div className="space-y-1">
-                        <h4 className="text-xs font-bold text-zinc-500">QUESTION {idx + 1}</h4>
-                        <p className="text-sm font-semibold text-zinc-100">{q.question_jp}</p>
-                        <p className="text-xs text-zinc-450 italic font-normal leading-relaxed">{qTranslated}</p>
+                        <h4 className="text-xs font-bold text-muted-foreground">QUESTION {idx + 1}</h4>
+                        <p className="text-sm font-semibold text-foreground">{q.question_jp}</p>
+                        <p className="text-xs text-muted-foreground italic font-normal leading-relaxed">{qTranslated}</p>
                       </div>
                       <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold shrink-0 ${
                         ansRecord.correct 
-                          ? 'bg-green-950/20 text-green-400 border border-green-900/30' 
-                          : 'bg-red-950/20 text-red-400 border border-red-900/30'
+                          ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20' 
+                          : 'bg-destructive/10 text-destructive dark:text-red-400 border border-destructive/20'
                       }`}>
                         {ansRecord.correct ? <Check className="w-3 h-3" /> : <X className="w-3 h-3" />}
                         {ansRecord.correct ? 'Correct' : 'Incorrect'}
@@ -313,7 +313,7 @@ export function PracticeQuizContent() {
                     </div>
 
                     {q.image_url && (
-                      <div className="border border-zinc-700/50 rounded-xl overflow-hidden bg-zinc-200 p-2 max-w-xs shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                      <div className="border border-border/50 rounded-xl overflow-hidden bg-secondary/50 p-2 max-w-xs shadow-sm">
                         <Image 
                           src={q.image_url} 
                           alt={`Question ${idx + 1}`} 
@@ -331,25 +331,25 @@ export function PracticeQuizContent() {
                         const isCorrectOpt = oIdx === q.correct_index;
                         const isSelectedOpt = oIdx === ansRecord.selected;
                         
-                        let borderStyle = 'border-zinc-900 bg-zinc-950/25';
-                        let textStyle = 'text-zinc-400';
+                        let borderStyle = 'border-border bg-secondary/30';
+                        let textStyle = 'text-muted-foreground';
                         
                         if (isCorrectOpt) {
-                          borderStyle = 'border-green-600/30 bg-green-950/10 text-green-300';
-                          textStyle = 'text-green-300';
+                          borderStyle = 'border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400';
+                          textStyle = 'text-green-600 dark:text-green-400';
                         } else if (isSelectedOpt) {
-                          borderStyle = 'border-red-600/30 bg-red-950/10 text-red-300';
-                          textStyle = 'text-red-300';
+                          borderStyle = 'border-destructive/30 bg-destructive/10 text-destructive dark:text-red-400';
+                          textStyle = 'text-destructive dark:text-red-400';
                         }
                         
                         return (
                           <div key={oIdx} className={`p-3 border rounded-lg flex items-start gap-2.5 ${borderStyle}`}>
                             <span className="text-xs font-bold opacity-60">{String.fromCharCode(65 + oIdx)}.</span>
                             <div className="flex flex-col gap-0.5">
-                              <span className="text-xs font-semibold text-zinc-300">{optJp}</span>
-                              <span className="text-[10px] text-zinc-550 italic font-normal leading-relaxed">{optTranslated}</span>
+                              <span className={`text-xs font-semibold ${textStyle}`}>{optJp}</span>
+                              <span className="text-[10px] text-muted-foreground italic font-normal leading-relaxed">{optTranslated}</span>
                               {q.option_images && q.option_images[oIdx] && (
-                                <div className="mt-2 border border-zinc-700/50 rounded-lg overflow-hidden bg-zinc-200 p-2 max-w-[200px] shadow-[0_0_10px_rgba(255,255,255,0.05)]">
+                                <div className="mt-2 border border-border rounded-lg overflow-hidden bg-secondary/30 p-2 max-w-[200px] shadow-sm">
                                   <Image 
                                     src={q.option_images[oIdx]} 
                                     alt={`Option ${oIdx + 1}`} 
@@ -366,10 +366,10 @@ export function PracticeQuizContent() {
                       })}
                     </div>
 
-                    <div className="bg-zinc-900/30 border border-zinc-900 p-4 rounded-xl space-y-1.5">
-                      <span className="block text-[10px] font-bold uppercase tracking-wider text-zinc-500">{t('explanation')}</span>
-                      <p className="text-xs font-medium text-zinc-300 leading-relaxed">{q.explanation_jp}</p>
-                      <p className="text-[11px] text-zinc-400 italic leading-relaxed">
+                    <div className="bg-secondary/50 border border-border p-4 rounded-xl space-y-1.5">
+                      <span className="block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{t('explanation')}</span>
+                      <p className="text-xs font-medium text-foreground leading-relaxed">{q.explanation_jp}</p>
+                      <p className="text-[11px] text-muted-foreground italic leading-relaxed">
                         {globalLang === 'en' ? q.explanation_en : q.explanation_id}
                       </p>
                     </div>
@@ -386,30 +386,30 @@ export function PracticeQuizContent() {
   const qTranslated = globalLang === 'en' ? currentQuestion.question_en : currentQuestion.question_id;
 
   return (
-    <div className="min-h-[calc(100vh-70px)] bg-black py-8 px-4 sm:px-6 lg:px-8 glow-wrapper">
-      <div className="max-w-3xl mx-auto animate-fade-in relative z-10">
+    <div className="flex flex-col justify-center min-h-[calc(100vh-70px)] bg-background py-8 px-4 sm:px-6 lg:px-8 glow-wrapper">
+      <div className="max-w-3xl w-full mx-auto animate-fade-in relative z-10">
         
         {/* Quiz panel */}
         <div className="space-y-6">
-          <Card className="bg-zinc-950 border-zinc-800 p-6 sm:p-8 space-y-6">
+          <Card className="bg-card border-border p-6 sm:p-8 space-y-6">
             
             {/* Header info / language toggles */}
-            <div className="flex justify-between items-center pb-4 border-b border-zinc-900 gap-4">
+            <div className="flex justify-between items-center pb-4 border-b border-border gap-4">
               <div className="space-y-0.5">
-                <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-blue-950/40 border border-blue-900/40 rounded-full text-blue-400">
+                <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-primary/10 border border-primary/20 rounded-full text-primary">
                   {currentQuestion.category}
                 </span>
-                <p className="text-xs text-zinc-500 font-medium mt-1">
+                <p className="text-xs text-muted-foreground font-medium mt-1">
                   {t('questionNum')} {currentIdx + 1} {t('of')} {questions.length}
                 </p>
               </div>
 
               {/* Translation toggler */}
-              <div className="flex items-center gap-1.5 bg-zinc-900 border border-zinc-800 rounded-lg p-0.5">
+              <div className="flex items-center gap-1.5 bg-secondary border border-border rounded-lg p-0.5">
                 <button 
                   onClick={() => setShowTranslation(true)} 
                   className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold transition-colors ${
-                    showTranslation ? 'bg-blue-600 text-white' : 'text-zinc-400 hover:text-zinc-200'
+                    showTranslation ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
                   }`}
                   title={t('show')}
                 >
@@ -419,7 +419,7 @@ export function PracticeQuizContent() {
                 <button 
                   onClick={() => setShowTranslation(false)} 
                   className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold transition-colors ${
-                    !showTranslation ? 'bg-zinc-700 text-white' : 'text-zinc-400 hover:text-zinc-200'
+                    !showTranslation ? 'bg-secondary-foreground text-secondary' : 'text-muted-foreground hover:text-foreground'
                   }`}
                   title={t('hide')}
                 >
@@ -431,15 +431,15 @@ export function PracticeQuizContent() {
 
             {/* Question Text */}
             <div className="space-y-2">
-              <h2 className="text-lg font-bold text-zinc-150 leading-snug">{currentQuestion.question_jp}</h2>
+              <h2 className="text-lg font-bold text-foreground leading-snug">{currentQuestion.question_jp}</h2>
               {showTranslation && (
-                <p className="text-sm text-zinc-400 font-normal leading-relaxed italic">{qTranslated}</p>
+                <p className="text-sm text-muted-foreground font-normal leading-relaxed italic">{qTranslated}</p>
               )}
             </div>
 
             {/* Diagram Image */}
             {currentQuestion.image_url && (
-              <div className="border border-zinc-700/50 rounded-xl overflow-hidden bg-zinc-200 p-2 max-w-xs mx-auto shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+              <div className="border border-border rounded-xl overflow-hidden bg-secondary/30 p-2 max-w-xs mx-auto shadow-sm">
                 <Image 
                   src={currentQuestion.image_url} 
                   alt="Question Diagram" 
@@ -460,12 +460,12 @@ export function PracticeQuizContent() {
                 
                 const isSelected = selectedAnswer === index;
                 
-                let borderClass = 'border-zinc-800 bg-zinc-950/40 hover:bg-zinc-900/30';
-                let textClass = 'text-zinc-300';
+                let borderClass = 'border-border bg-secondary/40 hover:bg-secondary/60';
+                let textClass = 'text-foreground';
                 
                 if (isSelected) {
-                  borderClass = 'border-blue-500 bg-blue-950/10';
-                  textClass = 'text-blue-300';
+                  borderClass = 'border-primary bg-primary/10';
+                  textClass = 'text-primary';
                 }
 
                 return (
@@ -477,10 +477,10 @@ export function PracticeQuizContent() {
                     <div className="flex flex-col gap-0.5">
                       <span className={`text-sm font-semibold ${textClass}`}>{optJp}</span>
                       {optTranslated && showTranslation && (
-                        <span className="text-xs text-zinc-500 font-normal leading-relaxed italic">{optTranslated}</span>
+                        <span className="text-xs text-muted-foreground font-normal leading-relaxed italic">{optTranslated}</span>
                       )}
                       {currentQuestion.option_images && currentQuestion.option_images[index] && (
-                        <div className="mt-2 border border-zinc-700/50 rounded-lg overflow-hidden bg-zinc-200 p-2 max-w-[200px] shadow-[0_0_10px_rgba(255,255,255,0.05)]">
+                        <div className="mt-2 border border-border rounded-lg overflow-hidden bg-secondary/30 p-2 max-w-[200px] shadow-sm">
                           <Image 
                             src={currentQuestion.option_images[index]} 
                             alt={`Option ${index + 1}`} 
@@ -498,11 +498,11 @@ export function PracticeQuizContent() {
             </div>
 
             {/* Action Buttons */}
-              <div className="pt-4 border-t border-zinc-900 flex justify-end">
+              <div className="pt-4 border-t border-border flex justify-end">
                 <Button 
                   onClick={handleNext}
                   disabled={selectedAnswer === null}
-                  className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 h-10 flex items-center gap-1.5"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 h-10 flex items-center gap-1.5"
                 >
                   {currentIdx + 1 < questions.length ? (
                     <>
@@ -524,9 +524,9 @@ export function PracticeQuizContent() {
 export default function PracticeQuiz() {
   return (
     <Suspense fallback={
-      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-black">
-        <div className="w-8 h-8 border-2 border-zinc-800 border-t-blue-500 rounded-full animate-spin"></div>
-        <p className="mt-4 text-sm text-zinc-400 font-medium">Loading practice...</p>
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background">
+        <div className="w-8 h-8 border-2 border-border border-t-primary rounded-full animate-spin"></div>
+        <p className="mt-4 text-sm text-muted-foreground font-medium">Loading practice...</p>
       </div>
     }>
       <PracticeQuizContent />

@@ -22,12 +22,12 @@ export function Dialog({ open, onOpenChange, children }: DialogProps) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm p-4 animate-fade-in">
       <div className="fixed inset-0 cursor-default" onClick={() => onOpenChange(false)}></div>
-      <div className="z-10 w-full max-w-md border border-zinc-800 bg-zinc-950 p-6 shadow-xl rounded-lg animate-scale-in relative">
+      <div className="z-10 w-full max-w-md border border-border bg-card p-6 shadow-xl rounded-lg animate-scale-in relative">
         <button 
           onClick={() => onOpenChange(false)}
-          className="absolute top-4 right-4 text-zinc-400 hover:text-zinc-100 transition-colors cursor-pointer text-lg font-bold"
+          className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors cursor-pointer text-lg font-bold"
           aria-label="Close"
         >
           ×
@@ -56,11 +56,11 @@ export function DialogHeader({ children, className }: { children: React.ReactNod
 }
 
 export function DialogTitle({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <h2 className={cn("text-lg font-semibold leading-none tracking-tight text-zinc-100", className)}>{children}</h2>;
+  return <h2 className={cn("text-lg font-semibold leading-none tracking-tight text-foreground", className)}>{children}</h2>;
 }
 
 export function DialogDescription({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <p className={cn("text-sm text-zinc-400", className)}>{children}</p>;
+  return <p className={cn("text-sm text-muted-foreground", className)}>{children}</p>;
 }
 
 export function DialogFooter({ children, className }: { children: React.ReactNode; className?: string }) {
