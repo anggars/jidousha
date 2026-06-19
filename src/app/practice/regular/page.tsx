@@ -8,7 +8,7 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, X, AlertCircle, ArrowLeft, ArrowRight, Languages, Activity, Timer, FileText } from 'lucide-react';
+import { Check, X, AlertCircle, ArrowLeft, ArrowRight, Languages, Activity, Timer, FileText, Menu } from 'lucide-react';
 import { FuriganaText } from '@/components/furigana';
 
 import { REGULAR_QUESTIONS as ALL_QUESTIONS } from '@/lib/questions-regular';
@@ -57,16 +57,16 @@ export function PracticeQuizContent() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isLoadingQuestions, setIsLoadingQuestions] = useState(true);
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
-  const [scoreCount, setScoreCount] = useState(0);
-  const [userAnswers, setUserAnswers] = useState<{ question_id: number; selected: number; correct: boolean }[]>([]);
+  const [answers, setAnswers] = useState<(number | null)[]>([]);
   const [isSavingHistory, setIsSavingHistory] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
+  const [timeIsUp, setTimeIsUp] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60 * 60); // 60 minutes in seconds
   
   // Translation Language State (default is English)
   const { globalLang, t } = useLanguage();
   const [showTranslation, setShowTranslation] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const getTranslatedCategory = (cat: string) => {
     if (cat === 'Teori (Gakka)') return globalLang === 'en' ? 'Theory (Gakka)' : 'Teori (Gakka)';
@@ -82,7 +82,7 @@ export function PracticeQuizContent() {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          setQuizFinished(true);
+          setTimeIsUp(true);
           return 0;
         }
         return prev - 1;
@@ -103,6 +103,13 @@ export function PracticeQuizContent() {
     // We allow guests to stay on this page
   }, [currentProfile, isProfileLoading]);
 
+  // Handle time up
+  useEffect(() => {
+    if (timeIsUp && !quizFinished) {
+      handleFinish();
+    }
+  }, [timeIsUp]);
+
   useEffect(() => {
     const fetchQuestions = async () => {
       setIsLoadingQuestions(true);
@@ -116,6 +123,7 @@ export function PracticeQuizContent() {
       }
 
       setQuestions(fetched);
+      setAnswers(Array(fetched.length).fill(null));
       setIsLoadingQuestions(false);
     };
 
@@ -149,36 +157,40 @@ export function PracticeQuizContent() {
   const currentQuestion = questions[currentIdx];
 
   const handleSelectOption = (index: number) => {
-    setSelectedAnswer(index);
+    setAnswers(prev => {
+      const newAnswers = [...prev];
+      newAnswers[currentIdx] = index;
+      return newAnswers;
+    });
   };
 
-  const handleNext = async () => {
-    if (selectedAnswer === null) return;
-
-    const isCorrect = selectedAnswer === currentQuestion.correct_index;
-    const newScore = isCorrect ? scoreCount + 1 : scoreCount;
-    
-    if (isCorrect) {
-      setScoreCount(newScore);
-    }
-
-    const newAnswers = [
-      ...userAnswers,
-      {
-        question_id: currentQuestion.id,
-        selected: selectedAnswer,
-        correct: isCorrect
-      }
-    ];
-    setUserAnswers(newAnswers);
-
+  const handleNext = () => {
     if (currentIdx + 1 < questions.length) {
       setCurrentIdx(prev => prev + 1);
-      setSelectedAnswer(null);
-    } else {
-      setQuizFinished(true);
-      await saveQuizHistory(newScore, newAnswers);
     }
+  };
+
+  const handlePrev = () => {
+    if (currentIdx > 0) {
+      setCurrentIdx(prev => prev - 1);
+    }
+  };
+
+  const handleFinish = async () => {
+    setQuizFinished(true);
+    let finalScore = 0;
+    const finalAnswersData = questions.map((q, idx) => {
+      const selected = answers[idx];
+      const isCorrect = selected === q.correct_index;
+      if (isCorrect) finalScore++;
+      return {
+        question_id: q.id,
+        selected: selected !== null ? selected : -1,
+        correct: isCorrect
+      };
+    });
+    
+    await saveQuizHistory(finalScore, finalAnswersData);
   };
 
   const saveQuizHistory = async (finalScore: number, finalAnswers: any[]) => {
@@ -217,6 +229,7 @@ export function PracticeQuizContent() {
 
   // Render Result Screen with detailed question review
   if (quizFinished) {
+    const scoreCount: number = answers.reduce((acc: number, ans, idx) => ans === questions[idx].correct_index ? acc + 1 : acc, 0);
     const finalScore = Math.round((scoreCount / questions.length) * 100);
     const passed = finalScore >= 80;
 
@@ -325,7 +338,9 @@ export function PracticeQuizContent() {
 
             <div className="divide-y divide-border space-y-8">
               {questions.map((q, idx) => {
-                const ansRecord = userAnswers.find(a => a.question_id === q.id) || { selected: -1, correct: false };
+                const selected = answers[idx];
+                const isCorrect = selected === q.correct_index;
+                const ansRecord = { selected: selected !== null ? selected : -1, correct: isCorrect };
                 const qTranslated = globalLang === 'en' ? q.question_en : q.question_id;
                 
                 return (
@@ -477,6 +492,15 @@ export function PracticeQuizContent() {
                   >
                     <Languages className="w-4 h-4" />
                   </button>
+                  
+                  {/* Sidebar toggler */}
+                  <button 
+                    onClick={() => setIsSidebarOpen(true)} 
+                    className="flex items-center justify-center w-9 h-9 rounded-full transition-colors bg-secondary text-muted-foreground hover:text-foreground border border-border"
+                    title="Menu Navigasi"
+                  >
+                    <Menu className="w-4 h-4" />
+                  </button>
                 </div>
               </div>
 
@@ -509,7 +533,7 @@ export function PracticeQuizContent() {
                   ? currentQuestion.options_en[index] 
                   : currentQuestion.options_id[index];
                 
-                const isSelected = selectedAnswer === index;
+                const isSelected = answers[currentIdx] === index;
                 
                 let borderClass = 'border-border bg-secondary/40 hover:bg-secondary/60';
                 let textClass = 'text-foreground';
@@ -549,25 +573,73 @@ export function PracticeQuizContent() {
             </div>
 
             {/* Action Buttons */}
-              <div className="pt-4 border-t border-border flex justify-end">
+              <div className="pt-4 border-t border-border flex justify-between items-center">
                 <Button 
-                  onClick={handleNext}
-                  disabled={selectedAnswer === null}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 h-10 flex items-center gap-1.5"
+                  onClick={handlePrev}
+                  disabled={currentIdx === 0}
+                  variant="outline"
+                  className="font-bold px-4 h-10 flex items-center gap-1.5"
                 >
-                  {currentIdx + 1 < questions.length ? (
-                    <>
-                      {t('nextQuestion')}
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  ) : (
-                    t('submitPractice')
-                  )}
+                  <ArrowLeft className="w-4 h-4" />
+                  {globalLang === 'en' ? 'Previous' : 'Sebelumnya'}
                 </Button>
+
+                {currentIdx + 1 < questions.length ? (
+                  <Button 
+                    onClick={handleNext}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 h-10 flex items-center gap-1.5"
+                  >
+                    {t('nextQuestion') || 'Selanjutnya'}
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                ) : (
+                  <Button 
+                    onClick={handleFinish}
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 h-10 flex items-center gap-1.5"
+                  >
+                    {t('submitPractice') || 'Selesai'}
+                  </Button>
+                )}
             </div>
           </Card>
         </div>
       </div>
+      </div>
+
+      {/* Sidebar Overlay */}
+      {isSidebarOpen && (
+        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 transition-opacity" onClick={() => setIsSidebarOpen(false)} />
+      )}
+      
+      {/* Sidebar Panel */}
+      <div className={`fixed top-0 right-0 h-full w-72 bg-card border-l border-border z-50 transform transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : 'translate-x-full'} flex flex-col shadow-2xl`}>
+        <div className="p-4 border-b border-border flex justify-between items-center bg-secondary/30">
+          <h3 className="font-bold text-foreground">Navigasi Soal</h3>
+          <Button variant="ghost" size="icon" onClick={() => setIsSidebarOpen(false)} className="h-8 w-8 rounded-full">
+            <X className="w-4 h-4" />
+          </Button>
+        </div>
+        
+        <div className="p-4 overflow-y-auto flex-1 grid grid-cols-5 gap-2 content-start">
+          {questions.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { setCurrentIdx(i); setIsSidebarOpen(false); }}
+              className={`h-10 w-full rounded-md text-sm font-bold border transition-colors flex items-center justify-center ${
+                currentIdx === i ? 'border-primary ring-2 ring-primary ring-offset-2 ring-offset-background bg-primary text-primary-foreground' :
+                answers[i] !== null ? 'bg-primary/20 border-primary/30 text-primary' : 'bg-secondary border-border text-foreground hover:bg-secondary/80'
+              }`}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
+        
+        <div className="p-4 border-t border-border bg-secondary/30">
+          <Button className="w-full font-bold h-11" onClick={() => { setIsSidebarOpen(false); handleFinish(); }}>
+            {t('submitPractice') || 'Selesai & Kumpulkan'}
+          </Button>
+        </div>
       </div>
     </>
   );
