@@ -8,7 +8,8 @@ import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, X, AlertCircle, ArrowLeft, ArrowRight, Languages, Activity, Eye, EyeOff, FileText } from 'lucide-react';
+import { Check, X, AlertCircle, ArrowLeft, ArrowRight, Languages, Activity, Timer, FileText } from 'lucide-react';
+import { FuriganaText } from '@/components/furigana';
 
 import { REGULAR_QUESTIONS as ALL_QUESTIONS } from '@/lib/questions-regular';
 
@@ -43,7 +44,7 @@ const DEFAULT_QUESTIONS: Question[] = ALL_QUESTIONS.map((q, idx) => ({
   explanation_id: q.explanationId || '',
   explanation_en: q.explanationEn || '',
   image_url: q.imageUrl || null,
-  category: 'Latihan'
+  category: idx < 30 ? 'Teori (Gakka)' : 'Praktek (Jitsugi)'
 }));
 
 export function PracticeQuizContent() {
@@ -61,10 +62,41 @@ export function PracticeQuizContent() {
   const [userAnswers, setUserAnswers] = useState<{ question_id: number; selected: number; correct: boolean }[]>([]);
   const [isSavingHistory, setIsSavingHistory] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(60 * 60); // 60 minutes in seconds
   
   // Translation Language State (default is English)
   const { globalLang, t } = useLanguage();
   const [showTranslation, setShowTranslation] = useState(false);
+
+  const getTranslatedCategory = (cat: string) => {
+    if (cat === 'Teori (Gakka)') return globalLang === 'en' ? 'Theory (Gakka)' : 'Teori (Gakka)';
+    if (cat === 'Praktek (Jitsugi)') return globalLang === 'en' ? 'Practical (Jitsugi)' : 'Praktek (Jitsugi)';
+    return cat;
+  };
+
+  // Timer logic
+  useEffect(() => {
+    if (quizFinished || isLoadingQuestions || questions.length === 0) return;
+    
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          setQuizFinished(true);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [quizFinished, isLoadingQuestions, questions.length]);
+
+  const formatTime = (seconds: number) => {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  };
 
   // Removed the redirection on !currentProfile so guests can access practice
   useEffect(() => {
@@ -285,7 +317,9 @@ export function PracticeQuizContent() {
               </div>
               
               <div className="flex items-center gap-2 bg-secondary border border-border rounded-lg p-1">
-                <span className="text-xs text-muted-foreground font-semibold px-2">Global Language: {globalLang.toUpperCase()}</span>
+                <span className="text-xs text-muted-foreground font-semibold px-2">
+                  {globalLang === 'en' ? 'Language' : 'Bahasa'}: {globalLang.toUpperCase()}
+                </span>
               </div>
             </div>
 
@@ -298,9 +332,14 @@ export function PracticeQuizContent() {
                   <div key={q.id} className="pt-8 first:pt-0 space-y-4">
                     <div className="flex justify-between items-start gap-4">
                       <div className="space-y-1">
-                        <h4 className="text-xs font-bold text-muted-foreground">QUESTION {idx + 1}</h4>
-                        <p className="text-sm font-semibold text-foreground">{q.question_jp}</p>
-                        <p className="text-xs text-muted-foreground italic font-normal leading-relaxed">{qTranslated}</p>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider bg-primary/10 border border-primary/20 rounded-full text-primary">
+                            {getTranslatedCategory(q.category)}
+                          </span>
+                          <h4 className="text-xs font-bold text-muted-foreground">{t('questionNum').toUpperCase()} {idx + 1}</h4>
+                        </div>
+                        <h3 className="font-bold text-base text-foreground mb-1"><FuriganaText text={q.question_jp} /></h3>
+                        <p className="text-sm text-muted-foreground italic">{globalLang === 'en' ? q.question_en : q.question_id}</p>
                       </div>
                       <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold shrink-0 ${
                         ansRecord.correct 
@@ -313,13 +352,13 @@ export function PracticeQuizContent() {
                     </div>
 
                     {q.image_url && (
-                      <div className="border border-border/50 rounded-xl overflow-hidden bg-secondary/50 p-2 max-w-xs shadow-sm">
+                      <div className="border border-border/50 rounded-xl overflow-hidden bg-white p-2 max-w-xs shadow-sm">
                         <Image 
                           src={q.image_url} 
                           alt={`Question ${idx + 1}`} 
                           width={300} 
                           height={200} 
-                          className="object-contain w-full h-auto mix-blend-multiply"
+                          className="object-contain w-full h-auto"
                           unoptimized
                         />
                       </div>
@@ -346,16 +385,16 @@ export function PracticeQuizContent() {
                           <div key={oIdx} className={`p-3 border rounded-lg flex items-start gap-2.5 ${borderStyle}`}>
                             <span className="text-xs font-bold opacity-60">{String.fromCharCode(65 + oIdx)}.</span>
                             <div className="flex flex-col gap-0.5">
-                              <span className={`text-xs font-semibold ${textStyle}`}>{optJp}</span>
-                              <span className="text-[10px] text-muted-foreground italic font-normal leading-relaxed">{optTranslated}</span>
+                              <span className={`text-sm font-bold ${textStyle}`}><FuriganaText text={optJp} /></span>
+                              <span className="text-xs text-muted-foreground italic font-normal leading-relaxed">{optTranslated}</span>
                               {q.option_images && q.option_images[oIdx] && (
-                                <div className="mt-2 border border-border rounded-lg overflow-hidden bg-secondary/30 p-2 max-w-[200px] shadow-sm">
+                                <div className="mt-2 border border-border rounded-lg overflow-hidden bg-white p-2 max-w-[200px] shadow-sm">
                                   <Image 
                                     src={q.option_images[oIdx]} 
                                     alt={`Option ${oIdx + 1}`} 
                                     width={200} 
                                     height={150} 
-                                    className="object-contain w-full h-auto mix-blend-multiply"
+                                    className="object-contain w-full h-auto"
                                     unoptimized
                                   />
                                 </div>
@@ -386,66 +425,78 @@ export function PracticeQuizContent() {
   const qTranslated = globalLang === 'en' ? currentQuestion.question_en : currentQuestion.question_id;
 
   return (
-    <div className="flex flex-col justify-center min-h-[calc(100vh-70px)] bg-background py-8 px-4 sm:px-6 lg:px-8 glow-wrapper">
+    <>
+      {/* Progress Bar Timer under navbar */}
+      {!quizFinished && !isLoadingQuestions && questions.length > 0 && (
+        <div className="fixed top-16 left-0 w-full h-1.5 bg-secondary z-40">
+          <div 
+            className={`h-full transition-all duration-1000 ease-linear ${timeLeft < 300 ? 'bg-destructive' : 'bg-primary'}`}
+            style={{ width: `${(timeLeft / 3600) * 100}%` }}
+          ></div>
+        </div>
+      )}
+      
+      <div className="flex flex-col justify-center min-h-[calc(100vh-70px)] bg-background py-8 px-4 sm:px-6 lg:px-8 glow-wrapper mt-1.5">
       <div className="max-w-3xl w-full mx-auto animate-fade-in relative z-10">
         
         {/* Quiz panel */}
         <div className="space-y-6">
           <Card className="bg-card border-border p-6 sm:p-8 space-y-6">
             
-            {/* Header info / language toggles */}
-            <div className="flex justify-between items-center pb-4 border-b border-border gap-4">
-              <div className="space-y-0.5">
-                <span className="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-primary/10 border border-primary/20 rounded-full text-primary">
-                  {currentQuestion.category}
-                </span>
-                <p className="text-xs text-muted-foreground font-medium mt-1">
-                  {t('questionNum')} {currentIdx + 1} {t('of')} {questions.length}
-                </p>
+              {/* Header info / language toggles */}
+              <div className="flex justify-between items-center pb-4 border-b border-border gap-4">
+                <div className="space-y-0.5">
+                  <span className={`px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider border rounded-full ${
+                    currentQuestion.category.includes('Teori') 
+                      ? 'bg-blue-500/10 border-blue-500/20 text-blue-600 dark:text-blue-400' 
+                      : 'bg-orange-500/10 border-orange-500/20 text-orange-600 dark:text-orange-400'
+                  }`}>
+                    {getTranslatedCategory(currentQuestion.category)}
+                  </span>
+                  <p className="text-sm text-muted-foreground font-medium mt-1">
+                    {t('questionNum')} {currentIdx + 1} {t('of')} {questions.length}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  {/* Timer Text */}
+                  <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full border text-sm font-bold ${
+                    timeLeft < 300 ? 'bg-destructive/10 border-destructive/20 text-destructive' : 'bg-secondary border-border text-foreground'
+                  }`}>
+                    <Timer className="w-4 h-4" />
+                    <span className="w-12 text-center">{formatTime(timeLeft)}</span>
+                  </div>
+
+                  {/* Translation toggler */}
+                  <button 
+                    onClick={() => setShowTranslation(!showTranslation)} 
+                    className={`flex items-center justify-center w-9 h-9 rounded-full transition-colors ${
+                      showTranslation ? 'bg-primary text-primary-foreground shadow-sm' : 'bg-secondary text-muted-foreground hover:text-foreground border border-border'
+                    }`}
+                    title={showTranslation ? t('hide') : t('show')}
+                  >
+                    <Languages className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
 
-              {/* Translation toggler */}
-              <div className="flex items-center gap-1.5 bg-secondary border border-border rounded-lg p-0.5">
-                <button 
-                  onClick={() => setShowTranslation(true)} 
-                  className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold transition-colors ${
-                    showTranslation ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                  title={t('show')}
-                >
-                  <Eye className="w-3.5 h-3.5" />
-                  {t('show')}
-                </button>
-                <button 
-                  onClick={() => setShowTranslation(false)} 
-                  className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold transition-colors ${
-                    !showTranslation ? 'bg-secondary-foreground text-secondary' : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                  title={t('hide')}
-                >
-                  <EyeOff className="w-3.5 h-3.5" />
-                  {t('hide')}
-                </button>
-              </div>
-            </div>
-
-            {/* Question Text */}
-            <div className="space-y-2">
-              <h2 className="text-lg font-bold text-foreground leading-snug">{currentQuestion.question_jp}</h2>
+              {/* Question Text */}
+              <div className="space-y-3">
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground leading-snug"><FuriganaText text={currentQuestion.question_jp} /></h2>
               {showTranslation && (
-                <p className="text-sm text-muted-foreground font-normal leading-relaxed italic">{qTranslated}</p>
+                <p className="text-base text-muted-foreground font-normal leading-relaxed italic">{qTranslated}</p>
               )}
-            </div>
+              </div>
 
             {/* Diagram Image */}
             {currentQuestion.image_url && (
-              <div className="border border-border rounded-xl overflow-hidden bg-secondary/30 p-2 max-w-xs mx-auto shadow-sm">
+              <div className="border border-border rounded-xl overflow-hidden bg-white p-2 max-w-xs mx-auto shadow-sm">
                 <Image 
                   src={currentQuestion.image_url} 
                   alt="Question Diagram" 
                   width={250} 
                   height={180} 
-                  className="object-contain w-full h-auto animate-fade-in mix-blend-multiply"
+                  className="object-contain w-full h-auto animate-fade-in"
                   unoptimized
                 />
               </div>
@@ -474,10 +525,10 @@ export function PracticeQuizContent() {
                     onClick={() => handleSelectOption(index)}
                     className={`flex items-start gap-4 p-4 border rounded-xl cursor-pointer transition-all ${borderClass}`}
                   >
-                    <div className="flex flex-col gap-0.5">
-                      <span className={`text-sm font-semibold ${textClass}`}>{optJp}</span>
+                    <div className="flex flex-col gap-1">
+                      <span className={`text-base sm:text-lg font-bold ${textClass}`}><FuriganaText text={optJp} /></span>
                       {optTranslated && showTranslation && (
-                        <span className="text-xs text-muted-foreground font-normal leading-relaxed italic">{optTranslated}</span>
+                        <span className="text-sm text-muted-foreground font-normal leading-relaxed italic">{optTranslated}</span>
                       )}
                       {currentQuestion.option_images && currentQuestion.option_images[index] && (
                         <div className="mt-2 border border-border rounded-lg overflow-hidden bg-secondary/30 p-2 max-w-[200px] shadow-sm">
@@ -486,7 +537,7 @@ export function PracticeQuizContent() {
                             alt={`Option ${index + 1}`} 
                             width={200} 
                             height={150} 
-                            className="object-contain w-full h-auto mix-blend-multiply"
+                            className="object-contain w-full h-auto"
                             unoptimized
                           />
                         </div>
@@ -517,7 +568,8 @@ export function PracticeQuizContent() {
           </Card>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
