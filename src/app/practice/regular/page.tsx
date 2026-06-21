@@ -200,6 +200,7 @@ export function PracticeQuizContent() {
     const finalScorePct = Math.round((finalScore / questions.length) * 100);
 
     if (!isSupabaseConfigured) {
+      alert('Database tidak terhubung (isSupabaseConfigured = false). Cek Environment Variables di Vercel.');
       setTimeout(() => {
         setIsSavingHistory(false);
       }, 500);
@@ -218,10 +219,12 @@ export function PracticeQuizContent() {
         });
         
       if (error) {
+        alert('Gagal menyimpan ke database! Error: ' + error.message);
         throw error;
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error saving history to Supabase:', err);
+      alert('Terjadi kesalahan saat menghubungi database: ' + (err.message || String(err)));
     } finally {
       setIsSavingHistory(false);
     }

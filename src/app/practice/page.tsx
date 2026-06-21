@@ -239,13 +239,14 @@ export function PracticeQuizContent() {
     await saveQuizHistory(finalScore, finalAnswersData);
   };
 
-  const saveQuizHistory = async (finalScore: number, finalAnswers: any[]) => {
+  const saveQuizHistory = async (scoreCount: number, finalAnswers: any[]) => {
     if (!currentProfile) return;
     
     setIsSavingHistory(true);
-    const finalScorePct = Math.round((finalScore / questions.length) * 100);
+    const finalScorePct = Math.round((scoreCount / questions.length) * 100);
 
     if (!isSupabaseConfigured) {
+      alert('Database tidak terhubung (isSupabaseConfigured = false). Cek Environment Variables di Vercel.');
       setTimeout(() => {
         setIsSavingHistory(false);
       }, 500);
@@ -259,15 +260,17 @@ export function PracticeQuizContent() {
           profile_id: currentProfile.id,
           score: finalScorePct,
           total_questions: questions.length,
-          answered_correctly: finalScore,
+          answered_correctly: scoreCount,
           answers_json: finalAnswers
         });
         
       if (error) {
+        alert('Gagal menyimpan ke database! Error: ' + error.message);
         throw error;
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error saving history to Supabase:', err);
+      alert('Terjadi kesalahan saat menghubungi database: ' + (err.message || String(err)));
     } finally {
       setIsSavingHistory(false);
     }
