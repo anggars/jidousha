@@ -17,7 +17,7 @@ export type QuestionType = {
 export const ALL_QUESTIONS: QuestionType[] = [
   {
     "id": "q1",
-    "japanese": "ガソリンエンジンの燃料は、軽油（けいゆ）です。",
+    "japanese": "ガソリンエンジンの燃料（ねんりょう）は、軽油（けいゆ）です。",
     "indonesian": "Bahan bakar mesin bensin adalah solar (light oil).",
     "english": "The fuel for a gasoline engine is light oil (diesel).",
     "options": [
@@ -25,7 +25,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "ガソリンエンジンの燃料はガソリンです。軽油はディーゼルエンジンの燃料です。",
+    "explanationJp": "ガソリンエンジンの燃料（ねんりょう）はガソリンです。軽油（けいゆ）はディーゼルエンジンの燃料（ねんりょう）です。",
     "explanationId": "Bahan bakar mesin bensin adalah bensin. Solar (light oil) adalah bahan bakar untuk mesin diesel.",
     "explanationEn": "The fuel for a gasoline engine is gasoline. Light oil (diesel) is the fuel for diesel engines."
   },
@@ -40,13 +40,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/2.png",
-    "explanationJp": "正解です。画像の測定器はダイヤルゲージです。",
+    "explanationJp": "正解（せいかい）です。画像（がぞう）の測定（そくてい）器（き）はダイヤルゲージです。",
     "explanationId": "Benar. Alat ukur pada gambar adalah dial gauge.",
     "explanationEn": "Correct. The measuring instrument in the image is a dial gauge."
   },
   {
     "id": "q3",
-    "japanese": "ブレーキライニングは、交換部品（こうかんぶひん）です。",
+    "japanese": "ブレーキライニングは、交換（こうかん）部品（ぶひん）です。",
     "indonesian": "Brake lining (kampas rem) adalah suku cadang yang diganti (replacement part).",
     "english": "The brake lining is a replacement part.",
     "options": [
@@ -54,13 +54,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。ブレーキライニングは摩耗するため、定期的な交換が必要です。",
+    "explanationJp": "正解（せいかい）です。ブレーキライニングは摩耗（まもう）するため、定期（ていき）的（てき）な交換（こうかん）が必要（ひつよう）です。",
     "explanationId": "Benar. Kampas rem mengalami keausan sehingga memerlukan penggantian berkala.",
     "explanationEn": "Correct. The brake lining wears out and requires periodic replacement."
   },
   {
     "id": "q4",
-    "japanese": "冷却装置（れいきゃくそうち）のラジエータは、ファンで温めます。",
+    "japanese": "冷却（れいきゃく）装置（そうち）のラジエータは、ファンで温（あたた）めます。",
     "indonesian": "Radiator pada sistem pendingin dihangatkan dengan kipas.",
     "english": "The radiator of the cooling system is warmed by a fan.",
     "options": [
@@ -68,13 +68,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "ラジエータはファンで冷却液を冷やすためのものです。温めるのではありません。",
+    "explanationJp": "ラジエータはファンで冷却（れいきゃく）液（えき）を冷（ひ）やすためのものです。温（あたた）めるのではありません。",
     "explanationId": "Radiator berfungsi untuk mendinginkan cairan pendingin menggunakan kipas, bukan untuk menghangatkan.",
     "explanationEn": "The radiator cools the coolant using a fan; it does not warm it."
   },
   {
     "id": "q5",
-    "japanese": "Aは、シックネス・ゲージで長さ、外径（がいけい）、内径（ないけい）などの測定に使用する。",
+    "japanese": "Aは、シックネス・ゲージで長（なが）さ、外（そと）径（径）、内径（ないけい）などの測定（そくてい）に使用（しよう）する。",
     "indonesian": "A adalah thickness gauge (feeler gauge) yang digunakan untuk mengukur panjang, diameter luar, dan diameter dalam.",
     "english": "A is a thickness gauge (feeler gauge) used for measuring length, outer diameter, and inner diameter.",
     "options": [
@@ -83,13 +83,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 1,
     "imageUrl": "/images/5.png",
-    "explanationJp": "画像Aはシックネスゲージ（隙間ゲージ）であり、微小な隙間を測定するためのものです。長さや外径の測定にはノギスやマイクロメータを使用します。",
+    "explanationJp": "画像（がぞう）Aはシックネスゲージ（隙間（すきま）ゲージ）であり、微小（びしょう）な隙間（すきま）を測定（そくてい）するためのものです。長（なが）さや外（そと）径（径）の測定（そくてい）にはノギスやマイクロメータを使用（しよう）します。",
     "explanationId": "Gambar A adalah feeler gauge (thickness gauge), yang digunakan untuk mengukur celah kecil. Panjang dan diameter diukur menggunakan vernier caliper atau mikrometer.",
     "explanationEn": "Image A shows a feeler gauge, used for measuring small clearances. Lengths and diameters are measured with a vernier caliper or micrometer."
   },
   {
     "id": "q6",
-    "japanese": "タイヤ・ゲージ（tire pressure gauge）で、タイヤのくうきあつを測定します。",
+    "japanese": "タイヤ・ゲージ（tire pressure gauge）で、タイヤのくうきあつを測定（そくてい）します。",
     "indonesian": "Gunakan tire pressure gauge untuk mengukur tekanan udara ban.",
     "english": "Use a tire pressure gauge to measure the tire's air pressure.",
     "options": [
@@ -97,13 +97,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。タイヤゲージはタイヤの空気圧を測定する専用工具です。",
+    "explanationJp": "正解（せいかい）です。タイヤゲージはタイヤの空気圧（くうきあつ）を測定（そくてい）する専用（せんよう）工具（こうぐ）です。",
     "explanationId": "Benar. Tire pressure gauge adalah alat khusus untuk mengukur tekanan udara ban.",
     "explanationEn": "Correct. A tire pressure gauge is a specialized tool for measuring tire air pressure."
   },
   {
     "id": "q7",
-    "japanese": "次のものはエンジンオイルの粘度（ねんど）を示しています：SAE 5W-30, 10W-30, 10W-40",
+    "japanese": "次（つぎ）のものはエンジンオイルの粘（ねば）度（たび）を示（しめ）しています：SAE 5W-30, 10W-30, 10W-40",
     "indonesian": "Berikut ini adalah yang menunjukkan kekentalan oli mesin: SAE 5W-30, 10W-30, 10W-40.",
     "english": "The following indicate engine oil viscosity: SAE 5W-30, 10W-30, 10W-40.",
     "options": [
@@ -111,13 +111,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。SAE番号はエンジンオイルの粘度グレードを示しています。",
+    "explanationJp": "正解（せいかい）です。SAE番号（ばんごう）はエンジンオイルの粘（ねば）度（たび）グレードを示（しめ）しています。",
     "explanationId": "Benar. Angka SAE menunjukkan tingkat kekentalan (viskositas) oli mesin.",
     "explanationEn": "Correct. The SAE numbers indicate the viscosity grade of the engine oil."
   },
   {
     "id": "q8",
-    "japanese": "オイル・フィルタ（oil filter）は、交換部品（こうかんぶひん）です。",
+    "japanese": "オイル・フィルタ（oil filter）は、交換（こうかん）部品（ぶひん）です。",
     "indonesian": "Oil filter adalah suku cadang yang diganti.",
     "english": "The oil filter is a replacement part.",
     "options": [
@@ -125,13 +125,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。オイルフィルタは汚れを取り除くため、定期的な交換が必要です。",
+    "explanationJp": "正解（せいかい）です。オイルフィルタは汚（よご）れを取（と）り除（のぞ）くため、定期（ていき）的（てき）な交換（こうかん）が必要（ひつよう）です。",
     "explanationId": "Benar. Filter oli menyaring kotoran dan harus diganti secara berkala.",
     "explanationEn": "Correct. The oil filter removes contaminants and must be replaced periodically."
   },
   {
     "id": "q9",
-    "japanese": "オイルフィルターの中にオイルエレメントが入っています。",
+    "japanese": "オイルフィルターの中（なか）にオイルエレメントが入（はい）っています。",
     "indonesian": "Di dalam filter oli terdapat elemen oli.",
     "english": "Inside the oil filter, there is an oil element.",
     "options": [
@@ -139,13 +139,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。オイルフィルターの内部には、実際に汚れをろ過するオイルエレメントが含まれています。",
+    "explanationJp": "正解（せいかい）です。オイルフィルターの内部（ないぶ）には、実際（じっさい）に汚（よご）れをろ過（か）するオイルエレメントが含（ふく）まれています。",
     "explanationId": "Benar. Di dalam filter oli terdapat elemen oli yang bertugas menyaring kotoran.",
     "explanationEn": "Correct. Inside the oil filter is the oil element that actually filters the contaminants."
   },
   {
     "id": "q10",
-    "japanese": "スタートボタン（またはスタータ）はバッテリーに充電します。",
+    "japanese": "スタートボタン（またはスタータ）はバッテリーに充電（じゅうでん）します。",
     "indonesian": "Tombol start (atau starter) mengisi daya baterai.",
     "english": "The start button (or starter) charges the battery.",
     "options": [
@@ -153,13 +153,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "スタータ（セルモーター）はエンジンを始動させるものであり、充電はしません。充電を行うのはオルタネーターです。",
+    "explanationJp": "スタータ（セルモーター）はエンジンを始動（しどう）させるものであり、充電（じゅうでん）はしません。充電（じゅうでん）を行（おこな）うのはオルタネーターです。",
     "explanationId": "Starter (motor starter) berfungsi untuk menghidupkan mesin, bukan untuk mengisi daya. Pengisian daya dilakukan oleh alternator.",
     "explanationEn": "The starter cranks the engine to start it, it does not charge the battery. The alternator is responsible for charging."
   },
   {
     "id": "q11",
-    "japanese": "タイミングライトは、点火時期（てんかじき）を点検・調整するために使用します。",
+    "japanese": "タイミングライトは、点火（てんか）時期（じき）を点検（てんけん）・調整（ちょうせい）するために使用（しよう）します。",
     "indonesian": "Timing light digunakan untuk memeriksa dan menyetel waktu pengapian.",
     "english": "A timing light is used to inspect and adjust the ignition timing.",
     "options": [
@@ -167,7 +167,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。タイミングライトはエンジンの点火時期を確認するための測定器です。",
+    "explanationJp": "正解（せいかい）です。タイミングライトはエンジンの点火（てんか）時期（じき）を確認（かくにん）するための測定（そくてい）器（き）です。",
     "explanationId": "Benar. Timing light adalah instrumen yang digunakan untuk memeriksa waktu pengapian (ignition timing) mesin.",
     "explanationEn": "Correct. A timing light is an instrument used to check the engine's ignition timing."
   },
@@ -182,7 +182,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/12.png",
-    "explanationJp": "正解です。画像はエンジンの主要構造であるシリンダーブロックを示しています。",
+    "explanationJp": "正解（せいかい）です。画像（がぞう）はエンジンの主要（しゅよう）構造（こうぞう）であるシリンダーブロックを示（しめ）しています。",
     "explanationId": "Benar. Gambar tersebut menunjukkan blok silinder, yang merupakan struktur utama mesin.",
     "explanationEn": "Correct. The image shows the cylinder block, which is the main structure of the engine."
   },
@@ -197,7 +197,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/13.png",
-    "explanationJp": "正解です。画像Aは発電機であるオルタネーターを示しています。",
+    "explanationJp": "正解（せいかい）です。画像（がぞう）Aは発電（はつでん）機（き）であるオルタネーターを示（しめ）しています。",
     "explanationId": "Benar. Gambar A menunjukkan alternator, yang berfungsi sebagai pembangkit listrik kendaraan.",
     "explanationEn": "Correct. Image A shows the alternator, which acts as the vehicle's electrical generator."
   },
@@ -211,13 +211,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "キャリパーの錆や汚れを落とす際に、サンドペーパーやワイヤーブラシを使用することがあります。（※シールの溝などは専用ツールで慎重に清掃します）",
+    "explanationJp": "キャリパーの錆（さび）や汚（よご）れを落（お）とす際（さい）に、サンドペーパーやワイヤーブラシを使用（しよう）することがあります。（※シールの溝（みぞ）などは専用（せんよう）ツールで慎重（しんちょう）に清掃（せいそう）します）",
     "explanationId": "Amplas (sandpaper) atau sikat kawat sering digunakan untuk membersihkan karat dan kotoran pada kaliper rem.",
     "explanationEn": "Sandpaper or a wire brush is often used to clean rust and dirt from the brake caliper."
   },
   {
     "id": "q15",
-    "japanese": "エアガン（エアブロー）でグリースを圧送（あっそう）する。",
+    "japanese": "エアガン（エアブロー）でグリースを圧（圧）送（おく）する。",
     "indonesian": "Gunakan air gun untuk menekan gemuk (grease).",
     "english": "Use an air gun to pump grease.",
     "options": [
@@ -225,13 +225,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "エアガンは圧縮空気でゴミを吹き飛ばす工具です。グリースを圧送するにはグリースガンを使用します。",
+    "explanationJp": "エアガンは圧縮（あっしゅく）空気（くうき）でゴミを吹（ふ）き飛（と）ばす工具（こうぐ）です。グリースを圧（圧）送（おく）するにはグリースガンを使用（しよう）します。",
     "explanationId": "Air gun digunakan untuk meniup debu dengan udara terkompresi. Untuk menekan gemuk, gunakan grease gun.",
     "explanationEn": "An air gun blows compressed air to remove dust. A grease gun is used to pump grease."
   },
   {
     "id": "q16",
-    "japanese": "図は、燃焼室（ねんしょうしつ）の冷却用（れいきゃくよう）のウォータ・ジャケットである。",
+    "japanese": "図（ず）は、燃焼（ねんしょう）室（しつ）の冷却（れいきゃく）用（よう）のウォータ・ジャケットである。",
     "indonesian": "Gambar menunjukkan water jacket untuk pendinginan ruang bakar.",
     "english": "The figure shows a water jacket for cooling the combustion chamber.",
     "options": [
@@ -240,7 +240,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 1,
     "imageUrl": "/images/16.png",
-    "explanationJp": "画像はウォータージャケットではなく、他の部品（ガスケット等）を示しています。",
+    "explanationJp": "画像（がぞう）はウォータージャケットではなく、他（た）の部品（ぶひん）（ガスケット等（とう））を示（しめ）しています。",
     "explanationId": "Gambar tersebut bukan menunjukkan water jacket, melainkan komponen lain (seperti gasket).",
     "explanationEn": "The image does not show a water jacket; it shows another component (such as a gasket)."
   },
@@ -255,13 +255,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 1,
     "imageUrl": "/images/17.png",
-    "explanationJp": "マイクロメータは外径や厚さを測定するものであり、隙間の測定にはシックネスゲージを使用します。また、画像Aの工具がマイクロメータでない可能性もあります。",
+    "explanationJp": "マイクロメータは外（そと）径（径）や厚（あつ）さを測定（そくてい）するものであり、隙間（すきま）の測定（そくてい）にはシックネスゲージを使用（しよう）します。また、画像（がぞう）Aの工具（こうぐ）がマイクロメータでない可能（かのう）性（せい）もあります。",
     "explanationId": "Mikrometer digunakan untuk mengukur diameter luar atau ketebalan. Untuk celah, gunakan feeler gauge.",
     "explanationEn": "A micrometer measures outside diameters and thickness. A feeler gauge is used to measure clearances."
   },
   {
     "id": "q18",
-    "japanese": "ファン・ベルトの摩耗（まもう）や損傷（そんしょう）は、目視（もくし）や手（て）で触（さわ）って点検する。",
+    "japanese": "ファン・ベルトの摩耗（まもう）や損傷（そんしょう）は、目視（もくし）や手（て）で触（さわ）って点検（てんけん）する。",
     "indonesian": "Keausan dan kerusakan fan belt diperiksa secara visual dan dengan rabaan tangan.",
     "english": "Wear and damage to the fan belt are inspected visually and by touching it with hands.",
     "options": [
@@ -270,13 +270,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/18.png",
-    "explanationJp": "正解です。ベルトのひび割れや摩耗は、目視と手触りで確認します。",
+    "explanationJp": "正解（せいかい）です。ベルトのひび割（わ）れや摩耗（まもう）は、目視（もくし）と手触（てざわ）りで確認（かくにん）します。",
     "explanationId": "Benar. Keretakan dan keausan pada belt diperiksa dengan melihat langsung dan merabanya.",
     "explanationEn": "Correct. Belt cracks and wear are checked by direct visual inspection and touching."
   },
   {
     "id": "q19",
-    "japanese": "サーキット・テスタは、電圧（てんあつ）、電流（でんりゅう）、抵抗（ていこう）を測定するときに使用する。",
+    "japanese": "サーキット・テスタは、電圧（でんあつ）、電流（でんりゅう）、抵抗（ていこう）を測定（そくてい）するときに使用（しよう）する。",
     "indonesian": "Circuit tester (multimeter) digunakan untuk mengukur tegangan, arus, dan hambatan.",
     "english": "A circuit tester (multimeter) is used to measure voltage, current, and resistance.",
     "options": [
@@ -284,13 +284,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。サーキットテスタ（マルチメータ）は電圧、電流、抵抗の3つを測定できる基本ツールです。",
+    "explanationJp": "正解（せいかい）です。サーキットテスタ（マルチメータ）は電圧（でんあつ）、電流（でんりゅう）、抵抗（ていこう）の3つを測定（そくてい）できる基本（きほん）ツールです。",
     "explanationId": "Benar. Circuit tester (multimeter) adalah alat dasar yang bisa mengukur ketiga besaran listrik tersebut.",
     "explanationEn": "Correct. A circuit tester (multimeter) is a basic tool capable of measuring these three electrical values."
   },
   {
     "id": "q20",
-    "japanese": "ブレーキドラムは交換部品（こうかんぶひん）です。",
+    "japanese": "ブレーキドラムは交換（こうかん）部品（ぶひん）です。",
     "indonesian": "Brake drum (tromol rem) adalah suku cadang yang diganti.",
     "english": "The brake drum is a replacement part.",
     "options": [
@@ -298,7 +298,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。ブレーキドラムは使用に伴い摩耗するため、限界値を超えたら交換が必要です。",
+    "explanationJp": "正解（せいかい）です。ブレーキドラムは使用（しよう）に伴（ともな）い摩耗（まもう）するため、限界（げんかい）値（ち）を超（こ）えたら交換（こうかん）が必要（ひつよう）です。",
     "explanationId": "Benar. Tromol rem akan aus seiring pemakaian, dan harus diganti jika melebihi batas toleransi.",
     "explanationEn": "Correct. The brake drum wears out with use and must be replaced when it exceeds the tolerance limit."
   },
@@ -312,13 +312,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。レシプロ（往復動）エンジンには4ストローク（サイクル）と2ストロークの方式が存在します。",
+    "explanationJp": "正解（せいかい）です。レシプロ（往復（おうふく）動（どう））エンジンには4ストローク（サイクル）と2ストロークの方式（ほうしき）が存在（そんざい）します。",
     "explanationId": "Benar. Mesin reciprocating (torak bolak-balik) memiliki tipe 4-langkah dan 2-langkah.",
     "explanationEn": "Correct. Reciprocating engines exist in both 4-stroke and 2-stroke configurations."
   },
   {
     "id": "q22",
-    "japanese": "レシプロ・エンジン（4ストローク）は、4工程（ストローク）で1サイクルを完了します。",
+    "japanese": "レシプロ・エンジン（4ストローク）は、4工程（こうてい）で1サイクルを完了（かんりょう）します。",
     "indonesian": "Mesin reciprocating (4-langkah) menyelesaikan 1 siklus dalam 4 langkah.",
     "english": "A reciprocating engine (4-stroke) completes 1 cycle in 4 strokes.",
     "options": [
@@ -326,13 +326,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。吸入・圧縮・燃焼（膨張）・排気の4工程で1サイクルが完了します。",
+    "explanationJp": "正解（せいかい）です。吸入（きゅうにゅう）・圧縮（あっしゅく）・燃焼（ねんしょう）（膨張（ぼうちょう））・排気（はいき）の4工程（こうてい）で1サイクルが完了（かんりょう）します。",
     "explanationId": "Benar. 1 siklus diselesaikan dalam 4 langkah: Hisap, Kompresi, Usaha (Pembakaran), dan Buang.",
     "explanationEn": "Correct. 1 cycle is completed in 4 strokes: Intake, Compression, Power (Combustion), and Exhaust."
   },
   {
     "id": "q23",
-    "japanese": "ブレーキ・キャリパはブレーキドラムに使われている。",
+    "japanese": "ブレーキ・キャリパはブレーキドラムに使（つか）われている。",
     "indonesian": "Brake caliper digunakan pada rem tromol.",
     "english": "The brake caliper is used in a drum brake.",
     "options": [
@@ -340,13 +340,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "ブレーキキャリパは「ディスクブレーキ」の構成部品です。ドラムブレーキにはホイールシリンダやブレーキシューが使われます。",
+    "explanationJp": "ブレーキキャリパは「ディスクブレーキ」の構成（こうせい）部品（ぶひん）です。ドラムブレーキにはホイールシリンダやブレーキシューが使（つか）われます。",
     "explanationId": "Brake caliper adalah komponen dari 'rem cakram' (disc brake). Rem tromol menggunakan wheel cylinder dan sepatu rem (brake shoe).",
     "explanationEn": "The brake caliper is a component of a 'disc brake'. Drum brakes use wheel cylinders and brake shoes."
   },
   {
     "id": "q24",
-    "japanese": "トーインゲージ（toe-in gauge）は、バルブの隙間（バルブクリアランス）を測定するものである。",
+    "japanese": "トーインゲージ（toe-in gauge）は、バルブの隙間（すきま）を測定（そくてい）するものである。",
     "indonesian": "Toe-in gauge digunakan untuk mengukur celah katup.",
     "english": "A toe-in gauge is used to measure valve clearance.",
     "options": [
@@ -354,7 +354,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "トーインゲージはホイールアライメント（トーイン）を測定するものです。バルブクリアランスはシックネスゲージで測定します。",
+    "explanationJp": "トーインゲージはホイールアライメント（トーイン）を測定（そくてい）するものです。バルブクリアランスはシックネスゲージで測定（そくてい）します。",
     "explanationId": "Toe-in gauge digunakan untuk mengukur wheel alignment (toe-in). Celah katup diukur dengan feeler gauge (thickness gauge).",
     "explanationEn": "A toe-in gauge measures wheel alignment (toe-in). Valve clearance is measured with a feeler gauge."
   },
@@ -369,7 +369,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/25.png",
-    "explanationJp": "正解です。画像は冷却液の熱を放熱するためのラジエータです。",
+    "explanationJp": "正解（せいかい）です。画像（がぞう）は冷却（れいきゃく）液（えき）の熱（ねつ）を放熱（ほうねつ）するためのラジエータです。",
     "explanationId": "Benar. Gambar tersebut adalah radiator, yang berfungsi melepaskan panas cairan pendingin.",
     "explanationEn": "Correct. The image shows a radiator, which dissipates the heat of the coolant."
   },
@@ -384,13 +384,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/26.png",
-    "explanationJp": "正解です。画像はオフセットレンチ（めがねレンチ）を示しています。",
+    "explanationJp": "正解（せいかい）です。画像（がぞう）はオフセットレンチ（めがねレンチ）を示（しめ）しています。",
     "explanationId": "Benar. Gambar menunjukkan offset wrench atau sering disebut kunci ring.",
     "explanationEn": "Correct. The image shows an offset wrench, also known as a box-end wrench."
   },
   {
     "id": "q27",
-    "japanese": "車両をジャッキアップする際、前輪に輪止め（ガンジァル）を設置しているイラスト。",
+    "japanese": "車両（しゃりょう）をジャッキアップする際（さい）、前輪（ぜんりん）に輪（わ）止（と）め（ガンジァル）を設置（せっち）しているイラスト。",
     "indonesian": "Ilustrasi mengganjal roda depan saat mendongkrak kendaraan.",
     "english": "An illustration of placing a wheel chock on the front wheel when jacking up the vehicle.",
     "options": [
@@ -399,13 +399,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/27.png",
-    "explanationJp": "正解です。車両をジャッキアップする際は、安全のために必ず輪止め（タイヤストッパー）を使用します。",
+    "explanationJp": "正解（せいかい）です。車両（しゃりょう）をジャッキアップする際（さい）は、安全（あんぜん）のために必（かなら）ず輪（わ）止（と）め（タイヤストッパー）を使用（しよう）します。",
     "explanationId": "Benar. Saat mendongkrak kendaraan, ganjal roda (wheel chock) wajib dipasang demi keselamatan.",
     "explanationEn": "Correct. When jacking up a vehicle, wheel chocks must always be used for safety."
   },
   {
     "id": "q28",
-    "japanese": "グロープラグはガソリンエンジンに使われている。",
+    "japanese": "グロープラグはガソリンエンジンに使（つか）われている。",
     "indonesian": "Glow plug (busi pijar) digunakan pada mesin bensin.",
     "english": "Glow plugs are used in gasoline engines.",
     "options": [
@@ -413,13 +413,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "グロープラグはディーゼルエンジンの始動補助装置です。ガソリンエンジンにはスパークプラグが使われます。",
+    "explanationJp": "グロープラグはディーゼルエンジンの始動（しどう）補助（ほじょ）装置（そうち）です。ガソリンエンジンにはスパークプラグが使（つか）われます。",
     "explanationId": "Glow plug (busi pijar) digunakan untuk membantu menghidupkan mesin diesel. Mesin bensin menggunakan busi (spark plug).",
     "explanationEn": "Glow plugs are a starting aid for diesel engines. Gasoline engines use spark plugs."
   },
   {
     "id": "q29",
-    "japanese": "スパークプラグ（spark plug）はガソリンエンジンに使われている。",
+    "japanese": "スパークプラグ（spark plug）はガソリンエンジンに使（つか）われている。",
     "indonesian": "Spark plug (busi) digunakan pada mesin bensin.",
     "english": "Spark plugs are used in gasoline engines.",
     "options": [
@@ -427,13 +427,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。スパークプラグはガソリンエンジンで混合気に点火するための部品です。",
+    "explanationJp": "正解（せいかい）です。スパークプラグはガソリンエンジンで混合（こんごう）気（き）に点火（てんか）するための部品（ぶひん）です。",
     "explanationId": "Benar. Busi (spark plug) adalah komponen pada mesin bensin untuk memercikkan api dan membakar campuran bahan bakar.",
     "explanationEn": "Correct. Spark plugs are components in gasoline engines that ignite the air-fuel mixture."
   },
   {
     "id": "q30",
-    "japanese": "ブレーキ液（リザーバタンク）の量は、目視により外部からレベルの基準線（MAX/MIN）を確認する。",
+    "japanese": "ブレーキ液（えき）の量（りょう）は、目視（もくし）により外部（がいぶ）からレベルの基準（きじゅん）線（せん）（MAX/MIN）を確認（かくにん）する。",
     "indonesian": "Ketinggian minyak rem (pada reservoir tank) diperiksa secara visual dari luar sesuai garis batas level (MAX/MIN).",
     "english": "The brake fluid level (in the reservoir tank) is visually checked from the outside against the reference lines (MAX/MIN).",
     "options": [
@@ -441,13 +441,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。ブレーキ液の量はタンク外部からMAXとMINの間にあるかを目視で確認します。",
+    "explanationJp": "正解（せいかい）です。ブレーキ液（えき）の量（りょう）はタンク外部（がいぶ）からMAXとMINの間（ま）にあるかを目視（もくし）で確認（かくにん）します。",
     "explanationId": "Benar. Ketinggian minyak rem selalu diperiksa dari luar tangki transparan, memastikannya berada di antara garis MAX dan MIN.",
     "explanationEn": "Correct. The brake fluid level is checked visually from outside the tank to ensure it's between MAX and MIN."
   },
   {
     "id": "q31",
-    "japanese": "エンジン警告灯（チェックエンジンランプ）は、エンジンシステムに異常（アブノーマル）が発生したことを検出するためのものである。",
+    "japanese": "エンジン警告（けいこく）灯（とう）は、エンジンシステムに異常（いじょう）が発生（はっせい）したことを検出（けんしゅつ）するためのものである。",
     "indonesian": "Lampu check engine berfungsi untuk mendeteksi ketidaknormalan pada sistem mesin.",
     "english": "The engine warning light (check engine lamp) detects abnormalities occurring in the engine system.",
     "options": [
@@ -455,13 +455,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。エンジン制御システム（センサー等）に異常があると警告灯が点灯します。",
+    "explanationJp": "正解（せいかい）です。エンジン制御（せいぎょ）システム（センサー等（とう））に異常（いじょう）があると警告（けいこく）灯（とう）が点灯（てんとう）します。",
     "explanationId": "Benar. Lampu peringatan (check engine) menyala jika ECU mendeteksi adanya malfungsi pada sistem kontrol mesin.",
     "explanationEn": "Correct. The warning light illuminates if the ECU detects a malfunction in the engine control system."
   },
   {
     "id": "q32",
-    "japanese": "マスタシリンダを取り外す際、ハンマで叩いて取り外す。",
+    "japanese": "マスタシリンダを取（と）り外（はず）す際（さい）、ハンマで叩（たた）いて取（と）り外（はず）す。",
     "indonesian": "Saat melepas master silinder, pukul menggunakan palu untuk melepaskannya.",
     "english": "When removing the master cylinder, strike it with a hammer to remove it.",
     "options": [
@@ -469,13 +469,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "精密部品であるマスタシリンダをハンマで叩いてはいけません。損傷の原因となります。",
+    "explanationJp": "精密（せいみつ）部品（ぶひん）であるマスタシリンダをハンマで叩（たた）いてはいけません。損傷（そんしょう）の原因（げんいん）となります。",
     "explanationId": "Komponen presisi seperti master silinder tidak boleh dilepas dengan cara dipukul palu karena akan merusaknya.",
     "explanationEn": "Precision parts like the master cylinder must not be struck with a hammer, as this will cause damage."
   },
   {
     "id": "q33",
-    "japanese": "ディスクホイールの材質は、主にステンレスまたはアルミニウムである。",
+    "japanese": "ディスクホイールの材質（ざいしつ）は、主（おも）にステンレスまたはアルミニウムである。",
     "indonesian": "Material disc wheel utamanya adalah stainless steel atau aluminium.",
     "english": "The materials for disc wheels are primarily stainless steel or aluminum.",
     "options": [
@@ -483,13 +483,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "ディスクホイールの主な材質は「スチール（鉄）」または「アルミニウム合金」です。ステンレスは一般的ではありません。",
+    "explanationJp": "ディスクホイールの主（おも）な材質（ざいしつ）は「スチール（鉄（てつ））」または「アルミニウム合金（ごうきん）」です。ステンレスは一般（いっぱん）的（てき）ではありません。",
     "explanationId": "Material utama velg mobil (disc wheel) adalah 'baja (steel)' atau 'paduan aluminium'. Stainless steel sangat jarang digunakan.",
     "explanationEn": "The main materials for disc wheels are 'steel' or 'aluminum alloy'. Stainless steel is not commonly used."
   },
   {
     "id": "q34",
-    "japanese": "ノギスを用いた測定結果の読み取りに関する画像問題。",
+    "japanese": "ノギスを用（もち）いた測定（そくてい）結果（けっか）の読（よ）み取（と）りに関（かん）する画像（がぞう）問題（もんだい）。",
     "indonesian": "Soal gambar mengenai pembacaan hasil pengukuran jangka sorong.",
     "english": "An image question regarding reading a measurement result from a vernier caliper.",
     "options": [
@@ -498,13 +498,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/34.png",
-    "explanationJp": "ノギスの本尺と副尺の目盛りを正確に読み取るスキルは基本作業として必須です。",
+    "explanationJp": "ノギスの本（ほん）尺（しゃく）と副（ふく）尺（しゃく）の目盛（めも）りを正確（せいかく）に読（よ）み取（と）るスキルは基本（きほん）作業（さぎょう）として必須（ひっす）です。",
     "explanationId": "Kemampuan membaca skala utama dan nonius pada jangka sorong sangat wajib dikuasai untuk pekerjaan dasar.",
     "explanationEn": "The ability to accurately read the main and vernier scales on a caliper is essential for basic work."
   },
   {
     "id": "q35",
-    "japanese": "スパナ（オープンエンドレンチ）を二本つなぎ合わせて（延長して）使用することは、正しい使用方法である。",
+    "japanese": "スパナ（オープンエンドレンチ）を二（に）本（ほん）つなぎ合（あ）わせて（延長（えんちょう）して）使用（しよう）することは、正（ただ）しい使用（しよう）方法（ほうほう）である。",
     "indonesian": "Menyambungkan dua buah spanner (kunci pas) untuk menambah tuas merupakan cara penggunaan yang benar.",
     "english": "Connecting two spanners (open-end wrenches) to extend leverage is the correct way to use them.",
     "options": [
@@ -512,13 +512,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 1,
-    "explanationJp": "工具をつなぎ合わせて延長使用することは、工具の破損や怪我の原因となるため禁止されています。",
+    "explanationJp": "工具（こうぐ）をつなぎ合（あ）わせて延長（えんちょう）使用（しよう）することは、工具（こうぐ）の破損（はそん）や怪我（けが）の原因（げんいん）となるため禁止（きんし）されています。",
     "explanationId": "Menyambung kunci (piping/double wrenching) dilarang karena bisa menyebabkan kunci patah dan kecelakaan kerja.",
     "explanationEn": "Connecting tools to extend leverage is prohibited because it can cause tool breakage and injury."
   },
   {
     "id": "q36",
-    "japanese": "タイヤの溝（みぞ）の深（ふかさ）は、デプス・ゲージなどを用いて2カ所（かしょ）だけ測定すれば十分である。",
+    "japanese": "タイヤの溝（みぞ）の深（ふか）は、デプス・ゲージなどを用（もち）いて2カ所（しょ）だけ測定（そくてい）すれば十分（じゅうぶん）である。",
     "indonesian": "Kedalaman alur ban cukup diukur pada 2 titik saja menggunakan depth gauge.",
     "english": "It is sufficient to measure the tire groove depth at only two locations using a depth gauge.",
     "options": [
@@ -527,13 +527,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 1,
     "imageUrl": "/images/36.png",
-    "explanationJp": "タイヤの溝の深さは、偏摩耗を確認するためにも複数箇所（円周上の均等な場所）で測定する必要があります。",
+    "explanationJp": "タイヤの溝（みぞ）の深（ふか）さは、偏（へん）摩耗（まもう）を確認（かくにん）するためにも複数（ふくすう）箇所（かしょ）（円周（えんしゅう）上（じょう）の均等（きんとう）な場所（ばしょ））で測定（そくてい）する必要（ひつよう）があります。",
     "explanationId": "Kedalaman alur ban harus diukur di beberapa titik merata untuk mendeteksi keausan tidak rata (uneven wear).",
     "explanationEn": "Tire groove depth must be measured at multiple evenly distributed locations to detect uneven wear."
   },
   {
     "id": "q37",
-    "japanese": "これはタイヤのトレッド・パターン（tread pattern）のリブ（rib）型である。",
+    "japanese": "これはタイヤのトレッド・パターン（tread pattern）のリブ（rib）型（がた）である。",
     "indonesian": "Ini adalah tipe rib dari pola tapak ban.",
     "english": "This is a rib-type tire tread pattern.",
     "options": [
@@ -542,13 +542,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/37.png",
-    "explanationJp": "正解です。進行方向に平行な直線状の溝を持つパターンは「リブ型」と呼ばれます。",
+    "explanationJp": "正解（せいかい）です。進行（しんこう）方向（ほうこう）に平行（へいこう）な直線（ちょくせん）状（じょう）の溝（みぞ）を持（も）つパターンは「リブ型（がた）」と呼（よ）ばれます。",
     "explanationId": "Benar. Pola tapak dengan alur lurus sejajar arah rotasi disebut tipe 'rib'.",
     "explanationEn": "Correct. A tread pattern with straight grooves parallel to the direction of rotation is called a 'rib' type."
   },
   {
     "id": "q38",
-    "japanese": "バイス（万力）のハンドルを締め付ける際、ハンマ（パル）で叩いて強く締め付ける。",
+    "japanese": "バイス（万力（まんりき））のハンドルを締（し）め付（つ）ける際（さい）、ハンマ（パル）で叩（たた）いて強（つよ）く締（し）め付（つ）ける。",
     "indonesian": "Saat mengencangkan tuas ragum (vise), pukul menggunakan palu agar lebih kuat.",
     "english": "When tightening the handle of a vise, strike it with a hammer to tighten it strongly.",
     "options": [
@@ -557,13 +557,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 1,
     "imageUrl": "/images/38.png",
-    "explanationJp": "バイスのハンドルをハンマで叩くと、バイス自体が破損する恐れがあるため禁止です。手でしっかりと締めます。",
+    "explanationJp": "バイスのハンドルをハンマで叩（たた）くと、バイス自体（じたい）が破損（はそん）する恐（おそ）れがあるため禁止（きんし）です。手（て）でしっかりと締（し）めます。",
     "explanationId": "Dilarang memukul tuas ragum dengan palu karena bisa mematahkan tuas atau merusak ulir. Kencangkan dengan tangan saja.",
     "explanationEn": "Striking the vise handle with a hammer is prohibited as it can damage the vise. Tighten it firmly by hand."
   },
   {
     "id": "q39",
-    "japanese": "ボルトやナットを規定（きてい）のトルクで締め付けることができる工具は、トルク・レンチである。",
+    "japanese": "ボルトやナットを規定（きてい）のトルクで締（し）め付（つ）けることができる工具（こうぐ）は、トルク・レンチである。",
     "indonesian": "Alat yang dapat mengencangkan baut dan mur sesuai torsi standar adalah torque wrench (kunci momen).",
     "english": "The tool that can tighten bolts and nuts to a specified torque is a torque wrench.",
     "options": [
@@ -571,18 +571,18 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "X"
     ],
     "correctAnswer": 0,
-    "explanationJp": "正解です。トルクレンチは指定されたトルク値で正確に締め付けるための専用工具です。",
+    "explanationJp": "正解（せいかい）です。トルクレンチは指定（してい）されたトルク値（ち）で正確（せいかく）に締（し）め付（つ）けるための専用（せんよう）工具（こうぐ）です。",
     "explanationId": "Benar. Kunci momen (torque wrench) adalah alat presisi untuk mengencangkan baut sesuai torsi spesifikasi pabrik.",
     "explanationEn": "Correct. A torque wrench is a precision tool for tightening bolts accurately to a specified torque value."
   },
   {
     "id": "q40",
-    "japanese": "サーキットテスタによる12Vバッテリの端子電圧の測定において、正しい準備作業はどれですか？",
+    "japanese": "サーキットテスタによる12Vバッテリの端子（たんし）電圧（でんあつ）の測定（そくてい）において、正（ただ）しい準備（じゅんび）作業（さぎょう）はどれですか？",
     "indonesian": "Pada pengukuran tegangan terminal baterai 12V menggunakan circuit tester, persiapan manakah yang benar?",
     "english": "When measuring the terminal voltage of a 12V battery with a circuit tester, which is the correct preparatory step?",
     "options": [
-      "プローブの赤色（＋）を、バッテリの「＋」端子に取り付ける。",
-      "プローブの赤色（＋）を、バッテリの「ー」端子に取り付ける。"
+      "プローブの赤色（あかいろ）（＋）を、バッテリの「＋」端子（たんし）に取（と）り付（つ）ける。",
+      "プローブの赤色（あかいろ）（＋）を、バッテリの「ー」端子（たんし）に取（と）り付（つ）ける。"
     ],
     "optionsIndonesian": [
       "Pasang probe merah (+) ke terminal '+' baterai.",
@@ -597,13 +597,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "/images/40b.png"
     ],
     "correctAnswer": 0,
-    "explanationJp": "電圧測定の基本として、赤色のプローブ（＋）はバッテリのプラス端子に、黒色（ー）はマイナス端子に接続します。",
+    "explanationJp": "電圧（でんあつ）測定（そくてい）の基本（きほん）として、赤色（あかいろ）のプローブ（＋）はバッテリのプラス端子（たんし）に、黒色（こくしょく）はマイナス端子（たんし）に接続（せつぞく）します。",
     "explanationId": "Aturan dasar pengukuran tegangan DC: probe merah (+) selalu dihubungkan ke terminal positif, probe hitam (-) ke negatif.",
     "explanationEn": "As a basic rule of voltage measurement, the red probe (+) goes to the positive terminal, and black (-) to the negative."
   },
   {
     "id": "q41",
-    "japanese": "水温センサ（Water temperature sensor）の抵抗値を測定する際、回路計（テスタ）の適切な測定レンジ（倍率）を選びなさい。",
+    "japanese": "水温（すいおん）センサ（Water temperature sensor）の抵抗（ていこう）値（ち）を測定（そくてい）する際（さい）、回路（かいろ）計（けい）の適切（てきせつ）な測定（そくてい）レンジ（倍率（ばいりつ））を選（えら）びなさい。",
     "indonesian": "Pilih rentang ukur (pengali) yang tepat pada tester saat mengukur nilai hambatan water temperature sensor.",
     "english": "Select the appropriate measurement range (multiplier) on the tester when measuring the resistance value of a water temperature sensor.",
     "options": [
@@ -619,13 +619,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "100x"
     ],
     "correctAnswer": 1,
-    "explanationJp": "水温センサの抵抗値は数kΩになることが多いため、x100やx1kレンジを使用するのが適切です。",
+    "explanationJp": "水温（すいおん）センサの抵抗（ていこう）値（ち）は数（すう）kΩになることが多（おお）いため、x100やx1kレンジを使用（しよう）するのが適切（てきせつ）です。",
     "explanationId": "Nilai hambatan sensor suhu air biasanya berada di kisaran beberapa kilo-ohm (kΩ), sehingga pengali x100 lebih tepat digunakan.",
     "explanationEn": "Water temperature sensors typically have resistance in the kilo-ohm range, making the x100 range appropriate."
   },
   {
     "id": "q42",
-    "japanese": "前問の設定（x100レンジ）で水温センサを測定した際、アナログテスタの指針が「20」を指していました。実際の抵抗値（Ω）を求めなさい。",
+    "japanese": "前（ぜん）問（とい）の設定（せってい）（x100レンジ）で水温（すいおん）センサを測定（そくてい）した際（さい）、アナログテスタの指針（ししん）が「20」を指（さ）していました。実際（じっさい）の抵抗（ていこう）値（ち）（Ω）を求（もと）めなさい。",
     "indonesian": "Saat mengukur water temperature sensor dengan pengaturan sebelumnya (skala x100), jarum tester analog menunjukkan '20'. Tentukan nilai hambatan aktual (Ω).",
     "english": "When measuring the water temperature sensor with the previous setting (x100 range), the analog tester's needle pointed to '20'. Find the actual resistance value (Ω).",
     "options": [
@@ -642,18 +642,18 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 1,
     "imageUrl": "/images/42.png",
-    "explanationJp": "指示値20に対して、レンジの倍率（x100）を掛けるため、20 × 100 = 2000Ω（2kΩ）となります。",
+    "explanationJp": "指示（しじ）値（ち）20に対（たい）して、レンジの倍率（ばいりつ）（x100）を掛（か）けるため、20 × 100 = 2000Ω（2kΩ）となります。",
     "explanationId": "Nilai pada jarum (20) dikalikan dengan pengali range (x100), sehingga 20 x 100 = 2000 Ω (atau 2 kΩ).",
     "explanationEn": "Multiply the needle reading (20) by the range multiplier (x100): 20 × 100 = 2000 Ω (2 kΩ)."
   },
   {
     "id": "q43",
-    "japanese": "ピストンピンの正しい測定方法（外径測定）を示している画像はどちらですか？",
+    "japanese": "ピストンピンの正（ただ）しい測定（そくてい）方法（ほうほう）（外（そと）径（径）測定（そくてい））を示（しめ）している画像（がぞう）はどちらですか？",
     "indonesian": "Gambar manakah yang menunjukkan cara pengukuran pin piston yang benar (mengukur diameter luar)?",
     "english": "Which image shows the correct measurement method (outer diameter measurement) for a piston pin?",
     "options": [
-      "画像A",
-      "画像B"
+      "画像（がぞう）A",
+      "画像（がぞう）B"
     ],
     "optionsIndonesian": [
       "Gambar A",
@@ -668,18 +668,18 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "/images/43b.png"
     ],
     "correctAnswer": 0,
-    "explanationJp": "外径を正確に測定するためには、マイクロメータのスピンドルとアンビルが測定物に対し垂直に当たるように保持する必要があります。",
+    "explanationJp": "外（そと）径（径）を正確（せいかく）に測定（そくてい）するためには、マイクロメータのスピンドルとアンビルが測定（そくてい）物（ぶつ）に対（たい）し垂直（すいちょく）に当（あ）たるように保持（ほじ）する必要（ひつよう）があります。",
     "explanationId": "Untuk mengukur diameter luar dengan presisi, mikrometer harus dipegang tegak lurus terhadap objek ukur (pin piston).",
     "explanationEn": "To accurately measure the outer diameter, the micrometer must be held exactly perpendicular to the measured object."
   },
   {
     "id": "q44",
-    "japanese": "次の画像のうち、「トルクレンチ」はどちらですか？",
+    "japanese": "次（つぎ）の画像（がぞう）のうち、「トルクレンチ」はどちらですか？",
     "indonesian": "Di antara gambar berikut, manakah yang merupakan 'torque wrench' (kunci momen)?",
     "english": "Among the following images, which one is a 'torque wrench'?",
     "options": [
-      "画像A",
-      "画像B"
+      "画像（がぞう）A",
+      "画像（がぞう）B"
     ],
     "optionsIndonesian": [
       "Gambar A",
@@ -694,13 +694,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "/images/44b.png"
     ],
     "correctAnswer": 0,
-    "explanationJp": "トルクレンチは設定したトルク値で締め付けるための機構（目盛りやダイヤル）を備えています。",
+    "explanationJp": "トルクレンチは設定（せってい）したトルク値（ち）で締（し）め付（つ）けるための機構（きこう）（目盛（めも）りやダイヤル）を備（そな）えています。",
     "explanationId": "Torque wrench memiliki mekanisme pengaturan nilai torsi (berupa skala ukur atau layar digital) pada gagangnya.",
     "explanationEn": "A torque wrench has a mechanism (scale or dial) for setting the desired torque value on its handle."
   },
   {
     "id": "q45",
-    "japanese": "長さ、幅、厚さ、高さ、穴の深さなどを広く測定できる測定工具はどれですか？",
+    "japanese": "長（なが）さ、幅（はば）、厚（あつ）さ、高（たか）さ、穴（あな）の深（ふか）さなどを広（ひろ）く測定（そくてい）できる測定（そくてい）工具（こうぐ）はどれですか？",
     "indonesian": "Alat ukur mana yang dapat mengukur secara luas mulai dari panjang, lebar, ketebalan, tinggi, hingga kedalaman lubang?",
     "english": "Which measuring tool can broadly measure length, width, thickness, height, and hole depth?",
     "options": [
@@ -716,18 +716,18 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "Micrometer"
     ],
     "correctAnswer": 0,
-    "explanationJp": "ノギスは本尺と副尺を持ち、外径・内径・深さ・段差など多目的に測定できる万能測定器です。",
+    "explanationJp": "ノギスは本（ほん）尺（しゃく）と副（ふく）尺（しゃく）を持（も）ち、外（そと）径（径）・内径（ないけい）・深（ふか）さ・段差（だんさ）など多（た）目的（もくてき）に測定（そくてい）できる万能（ばんのう）測定（そくてい）器（き）です。",
     "explanationId": "Jangka sorong adalah alat serbaguna yang rahang dan tangkainya bisa mengukur diameter luar, dalam, serta kedalaman lubang.",
     "explanationEn": "A vernier caliper is a versatile tool capable of measuring outside and inside dimensions, as well as depth."
   },
   {
     "id": "q46",
-    "japanese": "自動車のホイールナット（またはホイールボルト）を取り付ける際、どのような順序で締め付けるべきですか？",
+    "japanese": "自動車（じどうしゃ）のホイールナット（またはホイールボルト）を取（と）り付（つ）ける際（さい）、どのような順序（じゅんじょ）で締（し）め付（つ）けるべきですか？",
     "indonesian": "Saat memasang mur roda mobil (atau baut roda), urutan pengencangan seperti apa yang harus dilakukan?",
     "english": "When installing automobile wheel nuts (or wheel bolts), in what order should they be tightened?",
     "options": [
-      "対角線上に十字（ menyilang ）に締め付ける。",
-      "時計回り（ berurutan ）に順番に締め付ける。"
+      "対角線（たいかくせん）上（じょう）に十字（じゅうじ）（ menyilang ）に締（し）め付（つ）ける。",
+      "時計（とけい）回（まわ）り（ berurutan ）に順番（じゅんばん）に締（し）め付（つ）ける。"
     ],
     "optionsIndonesian": [
       "Dikencangkan secara menyilang (diagonal/silang).",
@@ -738,18 +738,18 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "Tighten sequentially in a clockwise direction."
     ],
     "correctAnswer": 0,
-    "explanationJp": "ホイールを均等に密着させるため、ホイールナットは必ず対角線（星型や十字型）の順序で締め付けます。",
+    "explanationJp": "ホイールを均等（きんとう）に密着（みっちゃく）させるため、ホイールナットは必（かなら）ず対角線（たいかくせん）（星（ほし）型（がた）や十字（じゅうじ）型（がた））の順序（じゅんじょ）で締（し）め付（つ）けます。",
     "explanationId": "Untuk mencegah velg terpasang miring, mur roda wajib dikencangkan secara menyilang (pola bintang/diagonal).",
     "explanationEn": "To ensure the wheel seats evenly, wheel nuts must always be tightened in a criss-cross (star or diagonal) pattern."
   },
   {
     "id": "q47",
-    "japanese": "ホイールナットを最終的にしっかりと規定トルクまで締め付ける際、何回に分けて締め付けを行うのが正しいですか？",
+    "japanese": "ホイールナットを最終（さいしゅう）的（てき）にしっかりと規定（きてい）トルクまで締（し）め付（つ）ける際（さい）、何（なん）回（かい）に分（わ）けて締（し）め付（づ）けを行（おこな）うのが正（ただ）しいですか？",
     "indonesian": "Saat mengencangkan mur roda secara maksimal sesuai standar torsi, berapa kali tahapan pengencangan yang benar?",
     "english": "When finally tightening wheel nuts securely to the specified torque, how many stages of tightening is correct?",
     "options": [
-      "1回で一気に締め付ける。",
-      "2〜3回に分けて段階的に締め付ける。"
+      "1回（かい）で一気（いっき）に締（し）め付（つ）ける。",
+      "2〜3回（かい）に分（わ）けて段階（だんかい）的（てき）に締（し）め付（つ）ける。"
     ],
     "optionsIndonesian": [
       "Dikencangkan sekaligus dalam 1 kali tarikan.",
@@ -760,13 +760,13 @@ export const ALL_QUESTIONS: QuestionType[] = [
       "Tighten gradually in 2 to 3 stages."
     ],
     "correctAnswer": 1,
-    "explanationJp": "均等な締め付けトルクを得るため、最初から本締めせず、2〜3回に分けて徐々に指定トルクまで締め付けるのが基本です。",
+    "explanationJp": "均等（きんとう）な締（し）め付（づ）けトルクを得（え）るため、最初（さいしょ）から本（ほん）締（し）めせず、2〜3回（かい）に分（わ）けて徐々に（じょじょに）指定（してい）トルクまで締（し）め付（つ）けるのが基本（きほん）です。",
     "explanationId": "Mencegah distorsi dan memastikan kekencangan merata, pengencangan harus dilakukan bertahap (misal: setengah torsi dulu, baru torsi penuh).",
     "explanationEn": "To achieve uniform tightening, they should be tightened gradually in 2-3 stages up to the final specified torque."
   },
   {
     "id": "q48",
-    "japanese": "画像のノギス（副尺）の目盛りが示す正しい測定値を読み取りなさい。",
+    "japanese": "画像（がぞう）のノギス（副（ふく）尺（しゃく））の目盛（めも）りが示（しめ）す正（ただ）しい測定（そくてい）値（ち）を読（よ）み取（と）りなさい。",
     "indonesian": "Bacalah nilai pengukuran yang benar dari skala jangka sorong (vernier caliper) pada gambar.",
     "english": "Read the correct measurement value shown on the scale of the vernier caliper in the image.",
     "options": [
@@ -783,18 +783,18 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 0,
     "imageUrl": "/images/48.png",
-    "explanationJp": "本尺の目盛りが26mmを超えた位置に副尺の0があり、副尺の3.5（0.35mm）の線が本尺と一致しているため、26.35mmです。",
+    "explanationJp": "本（ほん）尺（しゃく）の目盛（めも）りが26mmを超（こ）えた位置（いち）に副（ふく）尺（しゃく）の0があり、副（ふく）尺（しゃく）の3.5（0.35mm）の線（せん）が本（ほん）尺（しゃく）と一致（いっち）しているため、26.35mmです。",
     "explanationId": "Garis 0 nonius berada setelah 26 mm pada skala utama. Garis nonius yang lurus dengan skala utama adalah 0.35 mm. Total: 26.35 mm.",
     "explanationEn": "The vernier 0 is past 26mm on the main scale. The vernier mark aligning perfectly is 0.35mm. Total: 26.35mm."
   },
   {
     "id": "q49",
-    "japanese": "シリンダーヘッドボルトを脱着（緩める・締める）する際の手順として正しいものはどちらですか？",
+    "japanese": "シリンダーヘッドボルトを脱着（だっちゃく）（緩（ゆる）める・締（し）める）する際（さい）の手順（てじゅん）として正（ただ）しいものはどちらですか？",
     "indonesian": "Manakah prosedur yang benar saat melepas/memasang (mengencangkan/mengendurkan) baut silinder head?",
     "english": "Which is the correct procedure when removing/installing (loosening/tightening) cylinder head bolts?",
     "options": [
-      "端から順番に行う。",
-      "中央から外側へ向かって対角線（クロス）順に行う。"
+      "端（はじ）から順番（じゅんばん）に行（おこな）う。",
+      "中央（ちゅうおう）から外側（そとがわ）へ向（む）かって対角線（たいかくせん）順（じゅん）に行（おこな）う。"
     ],
     "optionsIndonesian": [
       "Lakukan berurutan dari ujung ke ujung.",
@@ -806,7 +806,7 @@ export const ALL_QUESTIONS: QuestionType[] = [
     ],
     "correctAnswer": 1,
     "imageUrl": "/images/49.png",
-    "explanationJp": "シリンダーヘッドの歪みを防ぐため、締める時は中央から外側へ、緩める時は外側から中央へ対角線状に行います。（※車種マニュアルに従う）",
+    "explanationJp": "シリンダーヘッドの歪（ゆが）みを防（ふせ）ぐため、締（し）める時（とき）は中央（ちゅうおう）から外側（そとがわ）へ、緩（ゆる）める時（とき）は外側（そとがわ）から中央（ちゅうおう）へ対角線（たいかくせん）状（じょう）に行（おこな）います。（※車種（しゃしゅ）マニュアルに従（したが）う）",
     "explanationId": "Untuk mencegah head silinder melengkung (warping), pengencangan dilakukan dari tengah menyilang ke luar. Pengenduran sebaliknya.",
     "explanationEn": "To prevent cylinder head warpage, tightening starts from the center working outward diagonally. Loosening is the reverse."
   }

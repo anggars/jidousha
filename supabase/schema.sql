@@ -14,14 +14,14 @@ CREATE POLICY "Allow public read access to profiles" ON public.profiles FOR SELE
 CREATE POLICY "Allow public write access to profiles" ON public.profiles FOR ALL USING (true);
 
 -- Seed profiles
-INSERT INTO public.profiles (name)
+INSERT INTO public.profiles (id, name, password)
 VALUES 
-    ('Angga'),
-    ('Dean'),
-    ('Rian'),
-    ('Agus'),
-    ('Sandriya')
-ON CONFLICT (name) DO NOTHING;
+    (1, 'Angga', 'seibi'),
+    (2, 'Dean', 'seibi'),
+    (3, 'Rian', 'seibi'),
+    (4, 'Agus', 'seibi'),
+    (5, 'Sandriya', 'seibi')
+ON CONFLICT (name) DO UPDATE SET password = EXCLUDED.password;
 
 
 -- 2. QUESTIONS TABLE
@@ -127,6 +127,4 @@ CREATE TABLE IF NOT EXISTS public.practice_history (
 
 ALTER TABLE public.practice_history ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY "Allow public read access to practice_history" ON public.practice_history FOR SELECT USING (true);
-CREATE POLICY "Allow public write access to practice_history" ON public.practice_history FOR INSERT WITH CHECK (true);
-CREATE POLICY "Allow public all access to practice_history" ON public.practice_history FOR ALL USING (true);
+CREATE POLICY "Enable ALL operations for practice_history" ON public.practice_history FOR ALL USING (true) WITH CHECK (true);

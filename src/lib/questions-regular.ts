@@ -39,7 +39,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q2",
-    "japanese": "ジーゼル・エンジンの排気ガス（exhaust gas）には、ＰＭ（Particulate Matter）がふくまれる。",
+    "japanese": "ジーゼル・エンジンの排気（はいき）ガス（exhaust gas）には、ＰＭ（Particulate Matter）がふくまれる。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -61,7 +61,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q3",
-    "japanese": "図（ず）は、燃焼室（ねんしょうしつ）の冷却用（れいきゃくよう）のウォータ・ジャケットである。",
+    "japanese": "図（ず）は、燃焼（ねんしょう）室（しつ）の冷却（れいきゃく）用（よう）のウォータ・ジャケットである。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -84,7 +84,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q4",
-    "japanese": "図（ず）は、直接噴射式（ちょくせつふんしゃしき）のジーゼル・エンジン（diesel engine）である。",
+    "japanese": "図（ず）は、直接（ちょくせつ）噴射（ふんしゃ）式（しき）のジーゼル・エンジン（diesel engine）である。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -107,7 +107,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q5",
-    "japanese": "オイル・ポンプ（oil pump）は、オイル・パン（oil pan）のオイル（oil）を各潤滑部（かくじゅんかつぶ）へ圧送（あっそう）する。",
+    "japanese": "オイル・ポンプ（oil pump）は、オイル・パン（oil pan）のオイル（oil）を各（かく）潤滑（じゅんかつ）部（ぶ）へ圧（圧）送（おく）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -129,7 +129,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q6",
-    "japanese": "ラジエータ（radiator）のラジエータ・キャップは、冷却水（れいきゃくすい）の温度（おんど）が低（ひく）いときにラジエータへの水路（すいろ）を閉（と）じて冷却水（れいきゃくすい）を早（はや）く、適温（てきおん）にする。",
+    "japanese": "ラジエータ（radiator）のラジエータ・キャップは、冷却（れいきゃく）水（すい）の温度（おんど）が低（ひく）いときにラジエータへの水路（すいろ）を閉（と）じて冷却（れいきゃく）水（すい）を早（はや）く、適温（てきおん）にする。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -151,7 +151,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q7",
-    "japanese": "エア・クリーナのエレメントが汚（よご）れて目詰（めづ）まりを起（お）こすと吸入空気（きゅうにゅうくうき）が減少（げんしょう）し、エンジンの性能（せいのう）が低下（ていか）する。",
+    "japanese": "エア・クリーナのエレメントが汚（よご）れて目（め）詰（つ）まりを起（お）こすと吸入（きゅうにゅう）空気（くうき）が減少（げんしょう）し、エンジンの性能（せいのう）が低下（ていか）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -173,7 +173,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q8",
-    "japanese": "バッテリに使用（しよう）される電解液（でんかいえき）は、硫酸（りゅうさん）と水（みず）を混合（こんごう）した希硫酸（きりゅうさん）で、いずれも純度（じゅんど）の高（たか）いものが使用（しよう）される。",
+    "japanese": "バッテリに使用（しよう）される電解（でんかい）液（えき）は、硫酸（りゅうさん）と水（みず）を混合（こんごう）した希（まれ）硫酸（りゅうさん）で、いずれも純度（じゅんど）の高（たか）いものが使用（しよう）される。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -217,7 +217,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q10",
-    "japanese": "図（ず）は、ダイアフラム・スプリング式（しき）クラッチで、主（おも）に乗用車（じょうようしゃ）や小型トラックなどに使（つか）われている。",
+    "japanese": "図（ず）は、ダイアフラム・スプリング式（しき）クラッチで、主（おも）に乗用車（じょうようしゃ）や小型（こがた）トラックなどに使（つか）われている。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -263,7 +263,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q12",
-    "japanese": "図（ず）は、リンク型リヤ・サスペンションである。",
+    "japanese": "図（ず）は、リンク型（がた）リヤ・サスペンションである。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -309,7 +309,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q14",
-    "japanese": "パワー・ステアリングには、油圧式（ゆあつしき）と電気式（でんきしき）がある。",
+    "japanese": "パワー・ステアリングには、油圧（ゆあつ）式（しき）と電気（でんき）式（しき）がある。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -399,7 +399,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q18",
-    "japanese": "ブレーキ液は、長期間使用（ちょうきかんしよう）していると水分（すいぶん）を吸収（きゅうしゅう）し、性能（せいのう）が劣化（れっか）するので、指定（してい）されている期間（きかん）ごとに交換（こうかん）する。",
+    "japanese": "ブレーキ液（えき）は、長期間（ちょうきかん）使用（しよう）していると水分（すいぶん）を吸収（きゅうしゅう）し、性能（せいのう）が劣化（れっか）するので、指定（してい）されている期間（きかん）ごとに交換（こうかん）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -467,7 +467,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q21",
-    "japanese": "コンプレッション・ゲージは、シリンダの圧縮圧力（あっしゅくあつりょく）の測定（そくてい）ができる。",
+    "japanese": "コンプレッション・ゲージは、シリンダの圧縮（あっしゅく）圧力（あつりょく）の測定（そくてい）ができる。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -490,7 +490,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q22",
-    "japanese": "ギヤ・オイルの粘度（ねんど）が高（たか）すぎると粘性抵抗（ねんせいていこう）が大（おお）きくなり、動力損失（どうりょくそんしつ）を増大（ぞうだい）させる。",
+    "japanese": "ギヤ・オイルの粘（ねば）度（たび）が高（たか）すぎると粘性（ねんせい）抵抗（ていこう）が大（おお）きくなり、動力（どうりょく）損失（そんしつ）を増大（ぞうだい）させる。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -534,7 +534,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q24",
-    "japanese": "発進時（はっしんじ）に異常（いじょう）な振動（しんどう）があったので、クラッチ・フェーシング（clutch facing）を点検（てんけん）した。",
+    "japanese": "発進（はっしん）時（じ）に異常（いじょう）な振動（しんどう）があったので、クラッチ・フェーシング（clutch facing）を点検（てんけん）した。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -556,7 +556,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q25",
-    "japanese": "ホイール・ナットの締（し）め付（つ）けは、１→２→３→４→５の順番（じゅんばん）に締（し）め付（つ）ける。",
+    "japanese": "ホイール・ナットの締（し）め付（づ）けは、１→２→３→４→５の順番（じゅんばん）に締（し）め付（つ）ける。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -601,7 +601,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q27",
-    "japanese": "油圧式（ゆあつしき）パワー・ステアリングのリザーバ・タンクのオイル（oil）の量（りょう）は、一般（いっぱん）にエンジンをアイドリングの状態（じょうたい）にして点検（てんけん）する。",
+    "japanese": "油圧（ゆあつ）式（しき）パワー・ステアリングのリザーバ・タンクのオイル（oil）の量（りょう）は、一般（いっぱん）にエンジンをアイドリングの状態（じょうたい）にして点検（てんけん）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -623,7 +623,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q28",
-    "japanese": "ブレーキ・ペダルを踏（ふ）み込（こ）んだとき、ふわふわした感（かん）じがあったので、ブレーキ液を補充（ほじゅう）した。",
+    "japanese": "ブレーキ・ペダルを踏（ふ）み込（こ）んだとき、ふわふわした感（かん）じがあったので、ブレーキ液（えき）を補充（ほじゅう）した。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -645,7 +645,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q29",
-    "japanese": "塗料（とりょう）には、下塗（したぬ）り用（よう）、中塗（なかぬ）り用（よう）、上塗（うわぬ）り用（よう）のものがある。",
+    "japanese": "塗料（とりょう）には、下塗（したぬ）り用（よう）、中（ちゅう）塗（ぬ）り用（よう）、上塗（うわぬ）り用（よう）のものがある。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -689,7 +689,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q31",
-    "japanese": "エア・クリーナは、空気中（くうきちゅう）のごみを取り除く。",
+    "japanese": "エア・クリーナは、空気（くうき）中（ちゅう）のごみを取（と）り除（のぞ）く。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -711,7 +711,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q32",
-    "japanese": "エンジン・オイルは、定期的（ていきてき）に交換（こうかん）する。",
+    "japanese": "エンジン・オイルは、定期（ていき）的（てき）に交換（こうかん）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -756,7 +756,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q34",
-    "japanese": "ファン・ベルトの摩耗（まもう）や損傷（そんしょう）は、目視（もくし）や手（て）で触（さわ）って点検する。",
+    "japanese": "ファン・ベルトの摩耗（まもう）や損傷（そんしょう）は、目視（もくし）や手（て）で触（さわ）って点検（てんけん）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -779,7 +779,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q35",
-    "japanese": "タイヤの溝（みぞ）の深さは、デプス・ゲージなどで２カ所（かしょ）測定（そくてい）すればよい。",
+    "japanese": "タイヤの溝（みぞ）の深（ふか）さは、デプス・ゲージなどで２カ所（しょ）測定（そくてい）すればよい。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -802,7 +802,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q36",
-    "japanese": "はいきガスの色（いろ）は、エンジンが冷（ひ）えた状態（じょうたい）で点検する。",
+    "japanese": "はいきガスの色（いろ）は、エンジンが冷（ひ）えた状態（じょうたい）で点検（てんけん）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -825,7 +825,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q37",
-    "japanese": "ホイール・ナットの締（し）め付（つ）けは、１→２→３→４→５の順番（じゅんばん）に締（し）め付（つ）ける。",
+    "japanese": "ホイール・ナットの締（し）め付（づ）けは、１→２→３→４→５の順番（じゅんばん）に締（し）め付（つ）ける。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -871,7 +871,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q39",
-    "japanese": "図（ず）は、リンク型リヤ・サスペンションである。",
+    "japanese": "図（ず）は、リンク型（がた）リヤ・サスペンションである。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -940,7 +940,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q42",
-    "japanese": "てんけんハンマでホイール・ナットが緩（ゆる）んでいないか点検した。",
+    "japanese": "てんけんハンマでホイール・ナットが緩（ゆる）んでいないか点検（てんけん）した。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -985,7 +985,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q44",
-    "japanese": "Ａは、トルク・レンチで、ボルト、ナットを規定（きてい）のトルクで締め付けることができる。",
+    "japanese": "Ａは、トルク・レンチで、ボルト、ナットを規定（きてい）のトルクで締（し）め付（つ）けることができる。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1008,7 +1008,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q45",
-    "japanese": "さぎょう着（ぎ）のボタンは、確実（かくじつ）にかける。",
+    "japanese": "さぎょう着（ちゃく）のボタンは、確実（かくじつ）にかける。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1052,7 +1052,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q47",
-    "japanese": "充電中（じゅうでんちゅう）のバッテリは、水素（すいそ）ガスを発生（はっせい）するので、絶対（ぜったい）に火気（かき）を近（ちか）づけない。",
+    "japanese": "充電（じゅうでん）中（ちゅう）のバッテリは、水素（すいそ）ガスを発生（はっせい）するので、絶対（ぜったい）に火気（かき）を近（ちか）づけない。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1096,7 +1096,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q49",
-    "japanese": "冷却装置（れいきゃくそうち）のラジエータは、ファンで温（あたた）めます。",
+    "japanese": "冷却（れいきゃく）装置（そうち）のラジエータは、ファンで温（あたた）めます。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1119,7 +1119,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q50",
-    "japanese": "Ａは、油圧式（ゆあつしき）ブレーキです。",
+    "japanese": "Ａは、油圧（ゆあつ）式（しき）ブレーキです。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1211,7 +1211,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q54",
-    "japanese": "ブレーキ・フルード（brake fluid）は、MAX よりおおく入れます。",
+    "japanese": "ブレーキ・フルード（brake fluid）は、MAX よりおおく入（い）れます。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1234,7 +1234,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q55",
-    "japanese": "ブレーキ・ドラム（brake drum）は、ハンマー（hammer）で叩いて点検します。",
+    "japanese": "ブレーキ・ドラム（brake drum）は、ハンマー（hammer）で叩（たた）いて点検（てんけん）します。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1257,7 +1257,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q56",
-    "japanese": "ファン・ベルト（fan belt）は、ハンマー（hammer）で叩いて点検します。",
+    "japanese": "ファン・ベルト（fan belt）は、ハンマー（hammer）で叩（たた）いて点検（てんけん）します。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1280,7 +1280,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q57",
-    "japanese": "イラストは、ドライバー（screwdriver）の正しい使い方です。",
+    "japanese": "イラストは、ドライバー（screwdriver）の正（ただ）しい使（つか）い方（かた）です。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1303,7 +1303,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q58",
-    "japanese": "ペンチ（pliers / cutting pliers）は、イラストのように使います。",
+    "japanese": "ペンチ（pliers / cutting pliers）は、イラストのように使（つか）います。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1326,7 +1326,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q59",
-    "japanese": "バイス（vice）は、ハンマー（hammer）で締めます。",
+    "japanese": "バイス（vice）は、ハンマー（hammer）で締（し）めます。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1349,7 +1349,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q60",
-    "japanese": "タイヤ・ゲージ（tire pressure gauge）で、タイヤの空気圧を測定します。",
+    "japanese": "タイヤ・ゲージ（tire pressure gauge）で、タイヤの空気圧（くうきあつ）を測定（そくてい）します。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1371,7 +1371,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q61",
-    "japanese": "デプス・ゲージ（depth gauge）で、タイヤの空気圧を測定します。",
+    "japanese": "デプス・ゲージ（depth gauge）で、タイヤの空気圧（くうきあつ）を測定（そくてい）します。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1393,7 +1393,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q62",
-    "japanese": "ハンマー（hammer）は、イラストのように使います。",
+    "japanese": "ハンマー（hammer）は、イラストのように使（つか）います。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1416,7 +1416,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q63",
-    "japanese": "けがを防ぐために帽子（ぼうし）をかぶり、安全靴（あんぜんくつ）をはきます。",
+    "japanese": "けがを防（ふせ）ぐために帽子（ぼうし）をかぶり、安全（あんぜん）靴（くつ）をはきます。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1460,7 +1460,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q65",
-    "japanese": "1kgのガソリン（gasoline）を燃焼（ねんしょう）させるのに必要（ひつよう）な空気量（くうきりょう）は、理論上（りろんじょう）約（やく）10kgとされている。",
+    "japanese": "1kgのガソリン（gasoline）を燃焼（ねんしょう）させるのに必要（ひつよう）な空気（くうき）量（りょう）は、理論（りろん）上（じょう）約（やく）10kgとされている。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1482,7 +1482,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q66",
-    "japanese": "ジーゼル・ノック（diesel knock）は、噴射時期（ふんしゃじき）が早過（はやす）ぎるときや圧縮圧力（あっしゅくあつりょく）が低（ひく）いときなどに発生（はっせい）しやすい。",
+    "japanese": "ジーゼル・ノック（diesel knock）は、噴射（ふんしゃ）時期（じき）が早（はや）過（す）ぎるときや圧縮（あっしゅく）圧力（あつりょく）が低（ひく）いときなどに発生（はっせい）しやすい。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1504,7 +1504,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q67",
-    "japanese": "シリンダ・ヘッド（cylinder head）は、鋳鉄製（ちゅうてつせい）のものが用（もち）いられている。",
+    "japanese": "シリンダ・ヘッド（cylinder head）は、鋳鉄（ちゅうてつ）製（せい）のものが用（もち）いられている。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1526,7 +1526,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q68",
-    "japanese": "直接噴射式（ちょくせつふんしゃしき）の特徴（とくちょう）は、燃焼圧力（ねんしょうあつりょく）が低（ひく）いので、運転中（うんてんちゅう）の騒音（そうおん）・振動（しんどう）が小（ちい）さくなる傾向（けいこう）がある。",
+    "japanese": "直接（ちょくせつ）噴射（ふんしゃ）式（しき）の特徴（とくちょう）は、燃焼（ねんしょう）圧力（あつりょく）が低（ひく）いので、運転（うんてん）中（ちゅう）の騒音（そうおん）・振動（しんどう）が小（ちい）さくなる傾向（けいこう）がある。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1548,7 +1548,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q69",
-    "japanese": "潤滑装置（じゅんかつそうち）の潤滑方式（じゅんかつほうしき）は、オイル・ポンプ（oil pump）から圧送（あっそう）されたオイル（oil）の全（すべ）てをろ過（か）して各潤滑部（かくじゅんかつぶ）に供給（きょうきゅう）する全流（ぜんりゅう）ろ過（か）圧送式（あっそうしき）が用（もち）いられている。",
+    "japanese": "潤滑（じゅんかつ）装置（そうち）の潤滑（じゅんかつ）方式（ほうしき）は、オイル・ポンプ（oil pump）から圧（圧）送（おく）されたオイル（oil）の全（すべ）てをろ過（か）して各（かく）潤滑（じゅんかつ）部（ぶ）に供給（きょうきゅう）する全（ぜん）流（ながれ）ろ過（か）圧（圧）送（おく）式（しき）が用（もち）いられている。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1570,7 +1570,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q70",
-    "japanese": "ウォータ・ポンプ（water pump）は、冷却水（れいきゃくすい）を強制的（きょうせいてき）に循環（じゅんかん）させるためのものである。",
+    "japanese": "ウォータ・ポンプ（water pump）は、冷却（れいきゃく）水（すい）を強制（きょうせい）的（てき）に循環（じゅんかん）させるためのものである。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1614,7 +1614,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q72",
-    "japanese": "N型半導体（がたはんどうたい）は、自由電子（じゆうでんし）が多（おお）くあるようにつくられた不純物半導体（ふじゅんぶつはんどうたい）をいう。",
+    "japanese": "N型（がた）半導体（はんどうたい）は、自由（じゆう）電子（でんし）が多（おお）くあるようにつくられた不純物（ふじゅんぶつ）半導体（はんどうたい）をいう。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1636,7 +1636,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q73",
-    "japanese": "オルタネータ（alternator）は、ロータ・コイル（rotor coil）に電気（でんき）を供給（きょうきゅう）する機構（きこう）から、ブラシ型（brush type）とブラシレス型（brushless type）に分類（ぶんるい）される。",
+    "japanese": "オルタネータ（alternator）は、ロータ・コイル（rotor coil）に電気（でんき）を供給（きょうきゅう）する機構（きこう）から、ブラシ型（がた）（brush type）とブラシレス型（がた）（brushless type）に分類（ぶんるい）される。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1658,7 +1658,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q74",
-    "japanese": "クラッチ・ディスク（clutch disc）は、一般（いっぱん）に複板式（ふくばんしき）クラッチ（clutch）である。",
+    "japanese": "クラッチ・ディスク（clutch disc）は、一般（いっぱん）に複（ふく）板（いた）式（しき）クラッチ（clutch）である。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1770,7 +1770,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q79",
-    "japanese": "ディスク・ホイール（disc wheel）には、一般に、鋼製（こうせい）ホイールと軽合金製（けいごうきんせい）ホイールがある。",
+    "japanese": "ディスク・ホイール（disc wheel）には、一般（いっぱん）に、鋼（はがね）製（せい）ホイールと軽（けい）合金（ごうきん）製（せい）ホイールがある。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1815,7 +1815,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q81",
-    "japanese": "油圧式（ゆあつしき）ブレーキ（brake）は、一般（いっぱん）に大型（おおがた）トラック（large sized truck）などに用（もち）いられている。",
+    "japanese": "油圧（ゆあつ）式（しき）ブレーキ（brake）は、一般（いっぱん）に大型（おおがた）トラック（large sized truck）などに用（もち）いられている。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1837,7 +1837,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q82",
-    "japanese": "ブレーキ液（brake fluid）は、液圧系（えきあつけい）に水（みず）が入（はい）ると沸点（ふってん）が低下（ていか）し、フェード（fade）現象（げんしょう）発生（はっせい）の原因（げんいん）となるので、洗車（せんしゃ）の際（さい）などは注意（ちゅうい）する。",
+    "japanese": "ブレーキ液（えき）（brake fluid）は、液（えき）圧（圧）系（けい）に水（みず）が入（はい）ると沸点（ふってん）が低下（ていか）し、フェード（fade）現象（げんしょう）発生（はっせい）の原因（げんいん）となるので、洗車（せんしゃ）の際（さい）などは注意（ちゅうい）する。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1882,7 +1882,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q84",
-    "japanese": "シックネス・ゲージ（thickness gauge）のリーフ（leaf）を隙間（すきま）に入れて、やや抵抗（ていこう）を感（かん）じながら抜（ぬ）き差（さ）しできるときのリーフ（leaf）の厚（あつ）さを、測定値（そくていち）とする。",
+    "japanese": "シックネス・ゲージ（thickness gauge）のリーフ（leaf）を隙間（すきま）に入（い）れて、やや抵抗（ていこう）を感（かん）じながら抜（ぬ）き差（さ）しできるときのリーフ（leaf）の厚（あつ）さを、測定（そくてい）値（ち）とする。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1904,7 +1904,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q85",
-    "japanese": "コンプレッション・ゲージ（compression gauge）の測定範囲（そくていはんい）は、一般にガソリン・エンジン用では0〜7MPa、ジーゼル・エンジン用では0〜2.5MPaである。",
+    "japanese": "コンプレッション・ゲージ（compression gauge）の測定（そくてい）範囲（はんい）は、一般（いっぱん）にガソリン・エンジン用（よう）では0〜7MPa、ジーゼル・エンジン用（よう）では0〜2.5MPaである。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1926,7 +1926,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q86",
-    "japanese": "ギヤ・オイル（gear oil）は、鉱物油（こうぶつゆ）や合成油（ごうせいゆ）に、各種（かくしゅ）添加剤（てんかざい）を加（くわ）えて耐水性（たいすいせい）、耐圧性（たいあつせい）、粘着性（ねんちゃくせい）などを向上（こうじょう）させたオイルである。",
+    "japanese": "ギヤ・オイル（gear oil）は、鉱物（こうぶつ）油（ゆ）や合成（ごうせい）油（ゆ）に、各種（かくしゅ）添加（てんか）剤（ざい）を加（くわ）えて耐水（たいすい）性（せい）、耐圧（たいあつ）性（せい）、粘着（ねんちゃく）性（せい）などを向上（こうじょう）させたオイルである。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1948,7 +1948,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q87",
-    "japanese": "シャシ・グリース（chassis grease）は、耐水性（たいすいせい）、耐圧性（たいあつせい）、粘着性（ねんちゃくせい）などに優（すぐ）れている。",
+    "japanese": "シャシ・グリース（chassis grease）は、耐水（たいすい）性（せい）、耐圧（たいあつ）性（せい）、粘着（ねんちゃく）性（せい）などに優（すぐ）れている。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -1970,7 +1970,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q88",
-    "japanese": "クラッチ・ペダル（clutch pedal）の高（たか）さが規定値（きていち）を外（はず）れていたので、ロッド（rod）やワイヤ（wire）などを調整（ちょうせい）した。",
+    "japanese": "クラッチ・ペダル（clutch pedal）の高（たか）さが規定（きてい）値（ち）を外（はず）れていたので、ロッド（rod）やワイヤ（wire）などを調整（ちょうせい）した。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -2058,7 +2058,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q92",
-    "japanese": "ブレーキ・ペダル（brake pedal）を踏（ふ）み込（こ）んだとき、踏（ふ）み代（しろ）が増加（ぞうか）していたので、ブレーキ液（brake fluid）を補充（ほじゅう）した。",
+    "japanese": "ブレーキ・ペダル（brake pedal）を踏（ふ）み込（こ）んだとき、踏（ふ）み代（だい）が増加（ぞうか）していたので、ブレーキ液（えき）（brake fluid）を補充（ほじゅう）した。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -2080,7 +2080,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q93",
-    "japanese": "冷却水（れいきゃくすい）の量（りょう）をサブタンク（sub tank）で点検（てんけん）したところ、不足（ふそく）していたので、規定（きてい）のレベル（level）まで補充（ほじゅう）した。",
+    "japanese": "冷却（れいきゃく）水（すい）の量（りょう）をサブタンク（sub tank）で点検（てんけん）したところ、不足（ふそく）していたので、規定（きてい）のレベル（level）まで補充（ほじゅう）した。",
     "indonesian": "Soal Regulasi SSW (Terjemahan akan ditambahkan jika tersedia)",
     "english": "SSW Regulation Question (Translation will be added if available)",
     "options": [
@@ -2124,12 +2124,12 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q95",
-    "japanese": "シリンダ・ヘッドの取り外しについて、注意することは、どれか。",
+    "japanese": "シリンダ・ヘッドの取（と）り外（はず）しについて、注意（ちゅうい）することは、どれか。",
     "indonesian": "Saat melepas cylinder head, apa yang harus diperhatikan?",
     "english": "When removing the cylinder head, what should be noted?",
     "options": [
-      "シリンダ・ヘッド・ガスケットは、交換しないので取り外しに注意する。",
-      "シリンダ・ヘッド・ボルトは、長さや太さが違うものがあるので、組み立て時に分かるように注意する。"
+      "シリンダ・ヘッド・ガスケットは、交換（こうかん）しないので取（と）り外（はず）しに注意（ちゅうい）する。",
+      "シリンダ・ヘッド・ボルトは、長（なが）さや太（ふと）さが違（ちが）うものがあるので、組（く）み立（た）て時（じ）に分（わ）かるように注意（ちゅうい）する。"
     ],
     "optionsIndonesian": [
       "Karena cylinder head gasket tidak diganti, berhati-hatilah saat melepasnya.",
@@ -2146,12 +2146,12 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q96",
-    "japanese": "シリンダ・ヘッドの取り付けについて、注意することは、どれか。",
+    "japanese": "シリンダ・ヘッドの取（と）り付（つ）けについて、注意（ちゅうい）することは、どれか。",
     "indonesian": "Saat memasang cylinder head, apa yang harus diperhatikan?",
     "english": "When installing the cylinder head, what should be noted?",
     "options": [
-      "シリンダ・ブロックのボルト穴にたまった冷却水やオイルなどは、こぼさないように注意する。",
-      "シリンダ・ヘッド・ボルトのねじ部に薄くオイルを塗る。"
+      "シリンダ・ブロックのボルト穴（あな）にたまった冷却（れいきゃく）水（すい）やオイルなどは、こぼさないように注意（ちゅうい）する。",
+      "シリンダ・ヘッド・ボルトのねじ部（ぶ）に薄（うす）くオイルを塗（ぬ）る。"
     ],
     "optionsIndonesian": [
       "Berhati-hatilah agar air pendingin atau oli yang terkumpul di lubang baut blok silinder tidak tumpah.",
@@ -2168,7 +2168,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q97",
-    "japanese": "シリンダ・ヘッド・ボルトを締め付ける正しい順番は、どれか。",
+    "japanese": "シリンダ・ヘッド・ボルトを締（し）め付（つ）ける正（ただ）しい順番（じゅんばん）は、どれか。",
     "indonesian": "Urutan yang benar untuk mengencangkan baut cylinder head adalah?",
     "english": "Which is the correct order to tighten the cylinder head bolts?",
     "options": [
@@ -2194,12 +2194,12 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q98",
-    "japanese": "バッテリの端子電圧の測定の準備について、正しいものはどれか。",
+    "japanese": "バッテリの端子（たんし）電圧（でんあつ）の測定（そくてい）の準備（じゅんび）について、正（ただ）しいものはどれか。",
     "indonesian": "Persiapan yang benar untuk mengukur tegangan terminal baterai adalah?",
     "english": "Which is the correct preparation for measuring battery terminal voltage?",
     "options": [
-      "プローブの赤色は、測定用ターミナルの「＋」に取り付ける。",
-      "プローブの赤色は、測定用ターミナルの「－」に取り付ける。"
+      "プローブの赤色（あかいろ）は、測定（そくてい）用（よう）ターミナルの「＋」に取（と）り付（つ）ける。",
+      "プローブの赤色（あかいろ）は、測定（そくてい）用（よう）ターミナルの「－」に取（と）り付（つ）ける。"
     ],
     "optionsIndonesian": [
       "Probe merah dipasang ke terminal ukur '+'.",
@@ -2242,7 +2242,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q100",
-    "japanese": "バルブ・ステムの外径は、どこか。",
+    "japanese": "バルブ・ステムの外（そと）径（径）は、どこか。",
     "indonesian": "Di manakah diameter luar valve stem?",
     "english": "Where is the outer diameter of the valve stem?",
     "options": [
@@ -2268,7 +2268,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q101",
-    "japanese": "マイクロメータによるバルブ・ステムの外径の測定値について、正しいものは、どれか。",
+    "japanese": "マイクロメータによるバルブ・ステムの外（そと）径（径）の測定（そくてい）値（ち）について、正（ただ）しいものは、どれか。",
     "indonesian": "Nilai pengukuran diameter luar valve stem dengan mikrometer yang benar adalah?",
     "english": "Which is the correct measurement of the valve stem's outer diameter using a micrometer?",
     "options": [
@@ -2291,7 +2291,7 @@ export const REGULAR_QUESTIONS: QuestionType[] = [
   },
   {
     "id": "q102",
-    "japanese": "ノギス測定の結果はどうですか？",
+    "japanese": "ノギス測定（そくてい）の結果（けっか）はどうですか？",
     "indonesian": "Bagaimana hasil pengukuran jangka sorong?",
     "english": "What is the result of the vernier caliper measurement?",
     "options": [
