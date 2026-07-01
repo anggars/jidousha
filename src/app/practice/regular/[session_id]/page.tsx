@@ -121,7 +121,7 @@ export function PracticeQuizContent({ sessionId }: { sessionId?: string }) {
       if (!currentProfile) {
         fetched = fetched.slice(0, 5);
       }
-
+      
       setQuestions(fetched);
       setAnswers(Array(fetched.length).fill(null));
       setIsLoadingQuestions(false);

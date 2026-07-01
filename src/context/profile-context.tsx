@@ -31,15 +31,7 @@ const DEFAULT_PROFILES: Profile[] = [
 ];
 
 export const ProfileProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentProfile, setCurrentProfile] = useState<Profile | null>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('jidousha_current_profile');
-      if (saved) {
-        try { return JSON.parse(saved); } catch(e) {}
-      }
-    }
-    return null;
-  });
+  const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
   const [profiles, setProfiles] = useState<Profile[]>(DEFAULT_PROFILES);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -94,6 +86,13 @@ export const ProfileProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   useEffect(() => {
     refreshProfiles();
+
+    const saved = localStorage.getItem('jidousha_current_profile');
+    if (saved) {
+      try {
+        setCurrentProfile(JSON.parse(saved));
+      } catch (e) {}
+    }
   }, []);
 
   const login = async (username: string, passwordInput: string): Promise<{ success: boolean; error?: string }> => {
