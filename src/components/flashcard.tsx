@@ -82,7 +82,11 @@ export function Flashcard({ kotoba, onKnow, onForgot }: FlashcardProps) {
             {onKnow && onForgot ? (
               <div className="flex items-center gap-3 w-full">
                 <Button 
-                  onClick={(e) => { e.stopPropagation(); onForgot(); }}
+                  onClick={(e) => { 
+                    e.stopPropagation(); 
+                    setIsFlipped(false);
+                    setTimeout(onForgot, 400);
+                  }}
                   variant="outline" 
                   className="flex-1 h-12 border-destructive/30 bg-destructive/5 hover:bg-destructive/10 text-destructive hover:text-destructive"
                 >
@@ -90,7 +94,11 @@ export function Flashcard({ kotoba, onKnow, onForgot }: FlashcardProps) {
                   {globalLang === 'en' ? 'Forgot' : 'Lupa'}
                 </Button>
                 <Button 
-                  onClick={(e) => { e.stopPropagation(); onKnow(); }}
+                  onClick={(e) => { 
+                    e.stopPropagation(); 
+                    setIsFlipped(false);
+                    setTimeout(onKnow, 400);
+                  }}
                   className="flex-1 h-12 bg-primary hover:bg-primary/90 text-primary-foreground shadow-md border-0"
                 >
                   <Check className="w-5 h-5 mr-1.5" />
