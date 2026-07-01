@@ -131,7 +131,7 @@ export default function KotobaPage() {
                 <ChevronLeft className="w-6 h-6" />
               </Button>
               
-              <div className="text-sm font-semibold text-muted-foreground min-w-[5rem] text-center">
+              <div className="text-sm font-semibold text-muted-foreground min-w-20 text-center">
                 {currentIndex + 1} / {filteredKotoba.length}
               </div>
 

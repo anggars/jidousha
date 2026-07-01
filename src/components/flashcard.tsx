@@ -21,7 +21,7 @@ export function Flashcard({ kotoba }: FlashcardProps) {
 
   return (
     <div 
-      className="relative w-full max-w-sm mx-auto aspect-[3/4] cursor-pointer perspective-1000"
+      className="relative w-full max-w-sm mx-auto aspect-3/4 cursor-pointer perspective-1000"
       onClick={() => setIsFlipped(!isFlipped)}
     >
       <div 
@@ -41,30 +41,30 @@ export function Flashcard({ kotoba }: FlashcardProps) {
               <FuriganaText text={kotoba.kanji} />
             </h2>
             <div className="space-y-1">
-              <p className="text-xl font-medium text-muted-foreground">{kotoba.romaji}</p>
+              <p className="text-2xl font-semibold text-muted-foreground">{kotoba.hiragana || kotoba.romaji}</p>
               <p className="text-sm font-semibold text-primary/70 uppercase tracking-widest mt-6">Tap to flip</p>
             </div>
           </div>
         </Card>
 
         {/* Back of card */}
-        <Card className="absolute w-full h-full backface-hidden rotate-y-180 bg-primary border-primary text-primary-foreground flex flex-col items-center justify-center p-6 shadow-md">
+        <Card className="absolute w-full h-full backface-hidden rotate-y-180 bg-card border-2 border-primary/40 flex flex-col items-center justify-center p-6 shadow-xl">
           <div className="flex-1 flex flex-col items-center justify-center space-y-6 w-full text-center">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold opacity-80 uppercase tracking-widest">{globalLang === 'en' ? 'Meaning' : 'Arti'}</h3>
-              <p className="text-3xl md:text-4xl font-extrabold leading-tight">
+              <h3 className="text-xl font-bold text-primary opacity-90 uppercase tracking-widest">{globalLang === 'en' ? 'Meaning' : 'Arti'}</h3>
+              <p className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
                 {globalLang === 'en' ? kotoba.english : kotoba.indonesian}
               </p>
             </div>
             
-            <div className="bg-primary-foreground/10 px-4 py-2 rounded-full mt-4 border border-primary-foreground/20">
-              <span className="text-sm font-medium tracking-wide">
+            <div className="bg-primary/10 px-4 py-2 rounded-full mt-4 border border-primary/20">
+              <span className="text-sm font-semibold tracking-wide text-primary">
                 {kotoba.category}
               </span>
             </div>
           </div>
           <div className="mt-auto pt-4">
-            <p className="text-sm font-semibold opacity-70 uppercase tracking-widest">Tap to flip back</p>
+            <p className="text-sm font-semibold text-primary/70 uppercase tracking-widest">Tap to flip back</p>
           </div>
         </Card>
       </div>
