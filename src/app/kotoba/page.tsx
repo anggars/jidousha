@@ -1,20 +1,25 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Search, BookOpen } from 'lucide-react';
 import { KOTOBA_LIST } from '@/lib/kotoba';
 import { FuriganaText } from '@/components/furigana';
+import { useLanguage } from '@/context/language-context';
 
 export default function KotobaPage() {
   const [searchQuery, setSearchQuery] = useState('');
+  const { t, globalLang } = useLanguage();
 
-  const filteredKotoba = KOTOBA_LIST.filter(k => 
-    k.kanji.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    k.romaji.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    k.indonesian.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredKotoba = KOTOBA_LIST.filter(k => {
+    const meaning = globalLang === 'en' ? k.english : k.indonesian;
+    return (
+      k.kanji.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      k.romaji.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      meaning.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  });
 
   return (
     <div className="min-h-[calc(100vh-70px)] bg-background py-10 px-4 sm:px-6 lg:px-8">
@@ -27,11 +32,10 @@ export default function KotobaPage() {
             </div>
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
-            Daftar Kotoba
+            {t('kotobaList')}
           </h1>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            Kumpulan kosa kata (Kotoba) penting untuk ujian Tokutei Ginou SSW Jidousha Seibi. 
-            Gunakan fitur pencarian untuk menemukan kata dengan cepat.
+            {t('kotobaDesc')}
           </p>
         </div>
 
@@ -41,7 +45,7 @@ export default function KotobaPage() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input 
                 type="text" 
-                placeholder="Cari kanji, romaji, atau arti..." 
+                placeholder={t('searchKotoba')} 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-9 bg-background border-border h-11"
@@ -55,8 +59,8 @@ export default function KotobaPage() {
                   <tr>
                     <th className="px-6 py-4 font-bold rounded-tl-lg">Kanji</th>
                     <th className="px-6 py-4 font-bold">Romaji</th>
-                    <th className="px-6 py-4 font-bold">Arti (Bahasa Indonesia)</th>
-                    <th className="px-6 py-4 font-bold rounded-tr-lg">Kategori</th>
+                    <th className="px-6 py-4 font-bold">{t('meaning')}</th>
+                    <th className="px-6 py-4 font-bold rounded-tr-lg">{t('category')}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
@@ -64,15 +68,13 @@ export default function KotobaPage() {
                     filteredKotoba.map((kotoba) => (
                       <tr key={kotoba.id} className="hover:bg-secondary/20 transition-colors">
                         <td className="px-6 py-4 font-bold text-lg text-foreground">
-                          {/* If they contain brackets, FuriganaText will parse them. 
-                              For simple kanji without brackets, it renders normally. */}
                           <FuriganaText text={kotoba.kanji} />
                         </td>
                         <td className="px-6 py-4 text-muted-foreground font-medium">
                           {kotoba.romaji}
                         </td>
                         <td className="px-6 py-4 text-foreground">
-                          {kotoba.indonesian}
+                          {globalLang === 'en' ? kotoba.english : kotoba.indonesian}
                         </td>
                         <td className="px-6 py-4">
                           <span className="bg-secondary px-2.5 py-1 rounded text-xs font-semibold text-muted-foreground border border-border">
@@ -84,7 +86,7 @@ export default function KotobaPage() {
                   ) : (
                     <tr>
                       <td colSpan={4} className="px-6 py-12 text-center text-muted-foreground">
-                        Kosa kata tidak ditemukan.
+                        {t('noKotobaFound')}
                       </td>
                     </tr>
                   )}

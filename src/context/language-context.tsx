@@ -93,6 +93,12 @@ export const translations = {
     packageRegularTitle: "Regular Package",
     packageRegularDesc: "102 complete questions without duplicates",
     startRegular: "Start Regular",
+    kotobaList: "Kotoba List",
+    kotobaDesc: "Collection of important vocabulary (Kotoba) for the Tokutei Ginou SSW Jidousha Seibi exam. Use the search feature to find words quickly.",
+    searchKotoba: "Search kanji, romaji, or meaning...",
+    meaning: "Meaning (English)",
+    category: "Category",
+    noKotobaFound: "Vocabulary not found.",
   },
   id: {
     dashboard: "Dasbor",
@@ -184,6 +190,12 @@ export const translations = {
     packageRegularTitle: "Paket Reguler",
     packageRegularDesc: "102 soal lengkap tanpa duplikat",
     startRegular: "Mulai Reguler",
+    kotobaList: "Daftar Kotoba",
+    kotobaDesc: "Kumpulan kosa kata (Kotoba) penting untuk ujian Tokutei Ginou SSW Jidousha Seibi. Gunakan fitur pencarian untuk menemukan kata dengan cepat.",
+    searchKotoba: "Cari kanji, romaji, atau arti...",
+    meaning: "Arti (Bahasa Indonesia)",
+    category: "Kategori",
+    noKotobaFound: "Kosa kata tidak ditemukan.",
   }
 };
 
