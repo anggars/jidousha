@@ -61,7 +61,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background px-4 glow-wrapper">
+    <div className="flex flex-col items-center justify-center flex-1 w-full px-4 py-8 glow-wrapper">
       <div className="w-full max-w-md animate-fade-in z-10 py-4">
         <div className="text-center mb-6">
           <span className="inline-block px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs font-bold text-primary uppercase tracking-widest mb-3">
