@@ -53,7 +53,7 @@ export function Flashcard({ kotoba, onKnow, onForgot }: FlashcardProps) {
             </h2>
             <div className="space-y-1">
               <p className="text-2xl font-semibold text-muted-foreground">{kotoba.hiragana || kotoba.romaji}</p>
-              <p className="text-sm font-semibold text-primary/70 uppercase tracking-widest mt-6 animate-pulse">Tap to flip</p>
+              <p className="text-sm font-semibold text-primary/70 uppercase tracking-widest mt-6 animate-pulse">{globalLang === 'en' ? 'Tap to flip' : 'Ketuk untuk membalik'}</p>
             </div>
           </div>
         </Card>
@@ -87,19 +87,19 @@ export function Flashcard({ kotoba, onKnow, onForgot }: FlashcardProps) {
                   className="flex-1 h-12 border-destructive/30 bg-destructive/5 hover:bg-destructive/10 text-destructive hover:text-destructive"
                 >
                   <X className="w-5 h-5 mr-1.5" />
-                  Lupa
+                  {globalLang === 'en' ? 'Forgot' : 'Lupa'}
                 </Button>
                 <Button 
                   onClick={(e) => { e.stopPropagation(); onKnow(); }}
-                  className="flex-1 h-12 bg-green-500 hover:bg-green-600 text-white shadow-md border-0"
+                  className="flex-1 h-12 bg-primary hover:bg-primary/90 text-primary-foreground shadow-md border-0"
                 >
                   <Check className="w-5 h-5 mr-1.5" />
-                  Hafal
+                  {globalLang === 'en' ? 'Know' : 'Hafal'}
                 </Button>
               </div>
             ) : (
               <div className="text-center" onClick={() => setIsFlipped(false)}>
-                <p className="text-sm font-semibold text-primary/70 uppercase tracking-widest">Tap to flip back</p>
+                <p className="text-sm font-semibold text-primary/70 uppercase tracking-widest">{globalLang === 'en' ? 'Tap to flip back' : 'Ketuk untuk membalik'}</p>
               </div>
             )}
           </div>
