@@ -121,19 +121,24 @@ export default function Dashboard() {
     );
   }
 
-  const averageScore = history.length > 0
-    ? Math.round(history.reduce((acc, curr) => acc + curr.score, 0) / history.length)
+  const quizHistory = history.filter(h => h.session_id !== 'KOTOBA');
+  const kotobaHistory = history.filter(h => h.session_id === 'KOTOBA');
+
+  const averageScore = quizHistory.length > 0
+    ? Math.round(quizHistory.reduce((acc, curr) => acc + curr.score, 0) / quizHistory.length)
     : 0;
 
-  const highestScore = history.length > 0
-    ? Math.max(...history.map(h => h.score))
+  const highestScore = quizHistory.length > 0
+    ? Math.max(...quizHistory.map(h => h.score))
     : 0;
 
-  const totalCorrect = history.reduce((acc, curr) => acc + curr.answered_correctly, 0);
-  const totalAnswered = history.reduce((acc, curr) => acc + curr.total_questions, 0);
+  const totalCorrect = quizHistory.reduce((acc, curr) => acc + curr.answered_correctly, 0);
+  const totalAnswered = quizHistory.reduce((acc, curr) => acc + curr.total_questions, 0);
   const accuracy = totalAnswered > 0
     ? Math.round((totalCorrect / totalAnswered) * 100)
     : 0;
+    
+  const totalKotobaMemorized = kotobaHistory.reduce((acc, curr) => acc + curr.answered_correctly, 0);
 
   const startSelectedQuiz = () => {
     router.push('/practice');
@@ -193,7 +198,7 @@ export default function Dashboard() {
                 <BarChart2 className="w-4 h-4 text-primary" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-foreground">{history.length}</div>
+                <div className="text-2xl font-bold text-foreground">{quizHistory.length}</div>
                 <p className="text-xs text-muted-foreground mt-1">{t('examsCompleted')}</p>
               </CardContent>
             </Card>

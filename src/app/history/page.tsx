@@ -86,8 +86,9 @@ export default function HistoryPage() {
           profiles: item.profiles ? { name: item.profiles.name } : null
         }));
 
+        const quizOnly = normalized.filter(h => h.session_id !== 'KOTOBA');
         setGlobalHistory(normalized);
-        calculateLeaderboard(normalized);
+        calculateLeaderboard(quizOnly);
       } catch (err) {
         console.error('Error fetching global history:', err);
         setGlobalHistory(MOCK_GLOBAL_HISTORY);
@@ -262,6 +263,35 @@ export default function HistoryPage() {
                           </div>
                           
                           {item.session_id ? (
+                            item.session_id === 'KOTOBA' ? (
+                              <Card className="bg-card border-border border-l-4 border-l-primary/70">
+                                <CardContent className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                  <div className="flex items-center gap-3">
+                                    <div className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center font-bold text-xs uppercase text-foreground">
+                                      {uName.charAt(0)}
+                                    </div>
+                                    <div className="flex flex-col">
+                                      <span className="text-sm font-bold text-foreground">{item.profiles?.name || 'Unknown'} <span className="ml-2 text-[9px] bg-primary/10 text-primary border border-primary/20 px-1.5 py-0.5 rounded-full font-bold uppercase tracking-wider">Hafalan Kotoba</span></span>
+                                      <span className="text-xs text-muted-foreground">
+                                        Menghafal {item.total_questions} kosakata
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                                    <p className="text-xs text-muted-foreground">
+                                      Hafal: <strong className="text-foreground">{item.answered_correctly}</strong>
+                                    </p>
+                                    <span className={`px-2.5 py-1 text-xs font-bold rounded-full border ${
+                                      isPass 
+                                        ? 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400' 
+                                        : 'bg-destructive/10 border-destructive/20 text-destructive dark:text-red-400'
+                                    }`}>
+                                      {item.score}%
+                                    </span>
+                                  </div>
+                                </CardContent>
+                              </Card>
+                            ) : (
                             <Link href={`/history/${item.session_id}`}>
                               <Card className="bg-card border-border hover:border-primary/50 transition-colors cursor-pointer">
                                 <CardContent className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -291,6 +321,7 @@ export default function HistoryPage() {
                                 </CardContent>
                               </Card>
                             </Link>
+                            )
                           ) : (
                             <Card className="bg-card border-border hover:border-primary/50 transition-colors">
                               <CardContent className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
