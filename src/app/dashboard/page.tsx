@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useProfile } from '@/context/profile-context';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -13,6 +14,7 @@ import { useLanguage } from '@/context/language-context';
 
 interface HistoryItem {
   id: number;
+  session_id: string | null;
   score: number;
   total_questions: number;
   answered_correctly: number;
@@ -57,7 +59,7 @@ export default function Dashboard() {
       try {
         const { data, error } = await supabase
           .from('practice_history')
-          .select('id, score, total_questions, answered_correctly, created_at')
+          .select('id, session_id, score, total_questions, answered_correctly, created_at')
           .eq('profile_id', currentProfile.id)
           .order('created_at', { ascending: false });
 
@@ -285,8 +287,8 @@ export default function Dashboard() {
                         ? 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400' 
                         : 'bg-destructive/10 border-destructive/20 text-destructive dark:text-red-400';
                       
-                      return (
-                        <div key={item.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-6 hover:bg-secondary/50 transition-colors gap-4 border border-transparent hover:border-border rounded-lg">
+                      const content = (
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between p-6 hover:bg-secondary/50 transition-colors gap-4 border border-transparent hover:border-border rounded-lg">
                           <div className="flex flex-col gap-1">
                             <span className="text-sm font-bold text-foreground">
                               {new Date(item.created_at).toLocaleDateString(globalLang === 'id' ? 'id-ID' : 'en-US', {
@@ -303,6 +305,18 @@ export default function Dashboard() {
                               {item.score}%
                             </div>
                           </div>
+                        </div>
+                      );
+
+                      return (
+                        <div key={item.id}>
+                          {item.session_id ? (
+                            <Link href={`/history/${item.session_id}`}>
+                              {content}
+                            </Link>
+                          ) : (
+                            content
+                          )}
                         </div>
                       );
                     })}

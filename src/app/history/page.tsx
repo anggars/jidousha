@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useProfile } from '@/context/profile-context';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -11,6 +12,7 @@ import { useLanguage } from '@/context/language-context';
 
 interface GlobalHistoryItem {
   id: number;
+  session_id: string | null;
   score: number;
   total_questions: number;
   answered_correctly: number;
@@ -61,6 +63,7 @@ export default function HistoryPage() {
           .from('practice_history')
           .select(`
             id,
+            session_id,
             score,
             total_questions,
             answered_correctly,
@@ -75,6 +78,7 @@ export default function HistoryPage() {
         
         const normalized: GlobalHistoryItem[] = (data || []).map((item: any) => ({
           id: item.id,
+          session_id: item.session_id || null,
           score: item.score,
           total_questions: item.total_questions,
           answered_correctly: item.answered_correctly,
@@ -257,33 +261,65 @@ export default function HistoryPage() {
                             <div className={`w-1.5 h-1.5 rounded-full ${isPass ? 'bg-green-500' : 'bg-destructive'}`}></div>
                           </div>
                           
-                          <Card className="bg-card border-border hover:border-primary/50 transition-colors">
-                            <CardContent className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                              <div className="flex items-center gap-3">
-                                <div className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center font-bold text-xs uppercase text-foreground">
-                                  {uName.charAt(0)}
+                          {item.session_id ? (
+                            <Link href={`/history/${item.session_id}`}>
+                              <Card className="bg-card border-border hover:border-primary/50 transition-colors cursor-pointer">
+                                <CardContent className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                  <div className="flex items-center gap-3">
+                                    <div className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center font-bold text-xs uppercase text-foreground">
+                                      {uName.charAt(0)}
+                                    </div>
+                                    <div className="flex flex-col">
+                                      <span className="text-sm font-bold text-foreground">{item.profiles?.name || 'Unknown'}</span>
+                                      <span className="text-xs text-muted-foreground">
+                                        {t('answeredCorrectly')} {item.answered_correctly}/{item.total_questions} {t('questions').toLowerCase()}
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                                    <p className="text-xs text-muted-foreground">
+                                      {t('correctOf')}: <strong className="text-foreground">{item.answered_correctly}</strong> {t('of')} <strong className="text-foreground">{item.total_questions}</strong>
+                                    </p>
+                                    <span className={`px-2.5 py-1 text-xs font-bold rounded-full border ${
+                                      isPass 
+                                        ? 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400' 
+                                        : 'bg-destructive/10 border-destructive/20 text-destructive dark:text-red-400'
+                                    }`}>
+                                      {item.score}%
+                                    </span>
+                                  </div>
+                                </CardContent>
+                              </Card>
+                            </Link>
+                          ) : (
+                            <Card className="bg-card border-border hover:border-primary/50 transition-colors">
+                              <CardContent className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-9 h-9 rounded-full bg-secondary border border-border flex items-center justify-center font-bold text-xs uppercase text-foreground">
+                                    {uName.charAt(0)}
+                                  </div>
+                                  <div className="flex flex-col">
+                                    <span className="text-sm font-bold text-foreground">{item.profiles?.name || 'Unknown'}</span>
+                                    <span className="text-xs text-muted-foreground">
+                                      {t('answeredCorrectly')} {item.answered_correctly}/{item.total_questions} {t('questions').toLowerCase()}
+                                    </span>
+                                  </div>
                                 </div>
-                                <div className="flex flex-col">
-                                  <span className="text-sm font-bold text-foreground">{item.profiles?.name || 'Unknown'}</span>
-                                  <span className="text-xs text-muted-foreground">
-                                    {t('answeredCorrectly')} {item.answered_correctly}/{item.total_questions} {t('questions').toLowerCase()}
+                                <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+                                  <p className="text-xs text-muted-foreground">
+                                    {t('correctOf')}: <strong className="text-foreground">{item.answered_correctly}</strong> {t('of')} <strong className="text-foreground">{item.total_questions}</strong>
+                                  </p>
+                                  <span className={`px-2.5 py-1 text-xs font-bold rounded-full border ${
+                                    isPass 
+                                      ? 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400' 
+                                      : 'bg-destructive/10 border-destructive/20 text-destructive dark:text-red-400'
+                                  }`}>
+                                    {item.score}%
                                   </span>
                                 </div>
-                              </div>
-                              <div className="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
-                                <p className="text-xs text-muted-foreground">
-                                  {t('correctOf')}: <strong className="text-foreground">{item.answered_correctly}</strong> {t('of')} <strong className="text-foreground">{item.total_questions}</strong>
-                                </p>
-                                <span className={`px-2.5 py-1 text-xs font-bold rounded-full border ${
-                                  isPass 
-                                    ? 'bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400' 
-                                    : 'bg-destructive/10 border-destructive/20 text-destructive dark:text-red-400'
-                                }`}>
-                                  {item.score}%
-                                </span>
-                              </div>
-                            </CardContent>
-                          </Card>
+                              </CardContent>
+                            </Card>
+                          )}
                         </div>
                       );
                     })}
