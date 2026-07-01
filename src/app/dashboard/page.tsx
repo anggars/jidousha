@@ -121,8 +121,8 @@ export default function Dashboard() {
     );
   }
 
-  const quizHistory = history.filter(h => h.session_id !== 'KOTOBA');
-  const kotobaHistory = history.filter(h => h.session_id === 'KOTOBA');
+  const quizHistory = history.filter(h => !h.session_id?.startsWith('KOTOBA'));
+  const kotobaHistory = history.filter(h => h.session_id?.startsWith('KOTOBA'));
 
   const averageScore = quizHistory.length > 0
     ? Math.round(quizHistory.reduce((acc, curr) => acc + curr.score, 0) / quizHistory.length)

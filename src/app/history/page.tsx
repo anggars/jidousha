@@ -86,7 +86,7 @@ export default function HistoryPage() {
           profiles: item.profiles ? { name: item.profiles.name } : null
         }));
 
-        const quizOnly = normalized.filter(h => h.session_id !== 'KOTOBA');
+        const quizOnly = normalized.filter(h => !h.session_id?.startsWith('KOTOBA'));
         setGlobalHistory(normalized);
         calculateLeaderboard(quizOnly);
       } catch (err) {
@@ -263,7 +263,7 @@ export default function HistoryPage() {
                           </div>
                           
                           {item.session_id ? (
-                            item.session_id === 'KOTOBA' ? (
+                            item.session_id?.startsWith('KOTOBA') ? (
                               <Card className="bg-card border-border border-l-4 border-l-primary/70">
                                 <CardContent className="p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                                   <div className="flex items-center gap-3">

@@ -74,7 +74,7 @@ export default function KotobaPage() {
         .from('practice_history')
         .insert({
           profile_id: currentProfile.id,
-          session_id: 'KOTOBA',
+          session_id: `KOTOBA_${Date.now()}`,
           score: Math.round((correct / total) * 100),
           total_questions: total,
           answered_correctly: correct,
@@ -159,7 +159,7 @@ export default function KotobaPage() {
               )}
             >
               <GalleryHorizontalEnd className="w-4 h-4" />
-              Flashcard
+              {globalLang === 'en' ? 'Flashcard' : 'Kartu'}
             </button>
             <button
               onClick={() => setViewMode('table')}
@@ -169,7 +169,7 @@ export default function KotobaPage() {
               )}
             >
               <LayoutList className="w-4 h-4" />
-              Table
+              {globalLang === 'en' ? 'Table' : 'Tabel'}
             </button>
           </div>
         </div>
