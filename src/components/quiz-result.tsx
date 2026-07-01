@@ -19,7 +19,7 @@ interface QuizResultProps {
 
 export function QuizResult({ questions, answers, isHistoryView = false }: QuizResultProps) {
   const router = useRouter();
-  const { t, language: globalLang } = useLanguage();
+  const { t, globalLang } = useLanguage();
   const { currentProfile } = useProfile();
 
   const scoreCount: number = answers.reduce((acc: number, ans, idx) => {
