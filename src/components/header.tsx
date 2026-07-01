@@ -7,7 +7,7 @@ import { useProfile } from '@/context/profile-context';
 import { isSupabaseConfigured } from '@/lib/supabase';
 import { useLanguage } from '@/context/language-context';
 import { useTheme } from 'next-themes';
-import { AlertCircle, LogOut, LayoutDashboard, FileText, BarChart3, Languages, Sun, Moon } from 'lucide-react';
+import { AlertCircle, LogOut, LayoutDashboard, FileText, BarChart3, Languages, Sun, Moon, BookOpen } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const { currentProfile, logout } = useProfile();
@@ -65,6 +65,13 @@ export const Header: React.FC = () => {
                   {t('leaderboard')}
                 </Link>
               )}
+              <Link 
+                href="/kotoba" 
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${pathname === '/kotoba' ? 'text-primary' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                <BookOpen className="w-4 h-4" />
+                Kotoba
+              </Link>
             </nav>
           )}
         </div>
@@ -99,27 +106,31 @@ export const Header: React.FC = () => {
             {mounted && resolvedTheme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
           
-          {currentProfile ? (
-            <div className="flex items-center gap-3 bg-card border border-border rounded-full pl-3 pr-1 py-1">
-              <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground uppercase">
-                {currentProfile.name.charAt(0)}
+          {mounted ? (
+            currentProfile ? (
+              <div className="flex items-center gap-3 bg-card border border-border rounded-full pl-3 pr-1 py-1">
+                <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground uppercase">
+                  {currentProfile.name.charAt(0)}
+                </div>
+                <span className="text-xs font-medium text-card-foreground pr-1">{currentProfile.name}</span>
+                <button 
+                  onClick={handleLogout} 
+                  className="p-1.5 rounded-full hover:bg-secondary text-muted-foreground hover:text-destructive transition-colors"
+                  title="Sign Out"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                </button>
               </div>
-              <span className="text-xs font-medium text-card-foreground pr-1">{currentProfile.name}</span>
-              <button 
-                onClick={handleLogout} 
-                className="p-1.5 rounded-full hover:bg-secondary text-muted-foreground hover:text-destructive transition-colors"
-                title="Sign Out"
+            ) : (
+              <Link 
+                href="/practice"
+                className="text-xs font-medium text-foreground bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border rounded-full px-4 py-1.5 cursor-pointer shadow-sm"
               >
-                <LogOut className="w-3.5 h-3.5" />
-              </button>
-            </div>
+                {t('playAsGuest')}
+              </Link>
+            )
           ) : (
-            <Link 
-              href="/practice"
-              className="text-xs font-medium text-foreground bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors border border-border rounded-full px-4 py-1.5 cursor-pointer shadow-sm"
-            >
-              {t('playAsGuest')}
-            </Link>
+            <div className="w-24 h-8 animate-pulse bg-secondary rounded-full border border-border"></div>
           )}
         </div>
       </div>
