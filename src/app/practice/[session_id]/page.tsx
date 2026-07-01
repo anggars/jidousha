@@ -44,7 +44,7 @@ const DEFAULT_QUESTIONS: Question[] = ALL_QUESTIONS.map((q, idx) => ({
   explanation_id: q.explanationId || '',
   explanation_en: q.explanationEn || '',
   image_url: q.imageUrl || null,
-  category: idx < 30 ? 'Teori (Gakka)' : 'Praktek (Jitsugi)'
+  category: (q.options.length === 2 && q.options[0] === 'O' && q.options[1] === 'X') ? 'Teori (Gakka)' : 'Praktek (Jitsugi)'
 }));
 
 export function PracticeQuizContent({ sessionId }: { sessionId?: string }) {
