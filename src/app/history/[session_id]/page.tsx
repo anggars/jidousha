@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, Suspense } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 import { QuizResult } from '@/components/quiz-result';
 import { Question } from '@/types/quiz';
@@ -10,9 +10,11 @@ import { useLanguage } from '@/context/language-context';
 import { ALL_QUESTIONS as FREE_QUESTIONS_RAW } from '@/lib/questions';
 import { REGULAR_QUESTIONS as REGULAR_QUESTIONS_RAW } from '@/lib/questions-regular';
 
-function HistoryDetailContent({ sessionId }: { sessionId: string }) {
+function HistoryDetailContent() {
   const router = useRouter();
   const { t } = useLanguage();
+  const params = useParams();
+  const sessionId = params.session_id as string;
   
   const [isLoading, setIsLoading] = useState(true);
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -130,14 +132,14 @@ function HistoryDetailContent({ sessionId }: { sessionId: string }) {
   return <QuizResult questions={questions} answers={answers} isHistoryView={true} />;
 }
 
-export default function HistoryDetailPage({ params }: { params: { session_id: string } }) {
+export default function HistoryDetailPage() {
   return (
     <Suspense fallback={
       <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background">
         <div className="w-8 h-8 border-2 border-border border-t-primary rounded-full animate-spin"></div>
       </div>
     }>
-      <HistoryDetailContent sessionId={params.session_id} />
+      <HistoryDetailContent />
     </Suspense>
   );
 }

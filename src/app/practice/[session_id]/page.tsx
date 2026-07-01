@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import { useProfile } from '@/context/profile-context';
 import { useLanguage } from '@/context/language-context';
 import { supabase, isSupabaseConfigured } from '@/lib/supabase';
@@ -33,10 +33,12 @@ const DEFAULT_QUESTIONS: Question[] = ALL_QUESTIONS.map((q, idx) => ({
   category: (q.options.length === 2 && q.options[0] === 'O' && q.options[1] === 'X') ? 'Teori (Gakka)' : 'Praktek (Jitsugi)'
 }));
 
-export function PracticeQuizContent({ sessionId }: { sessionId?: string }) {
+export function PracticeQuizContent() {
   const { currentProfile, isLoading: isProfileLoading } = useProfile();
   const router = useRouter();
   const searchParams = useSearchParams();
+  const params = useParams();
+  const sessionId = params.session_id as string;
 
   const categoryParam = searchParams.get('category') || 'Semua';
 
@@ -439,7 +441,7 @@ export function PracticeQuizContent({ sessionId }: { sessionId?: string }) {
   );
 }
 
-export default function PracticeQuiz({ params }: { params: { session_id: string } }) {
+export default function PracticeQuizPage() {
   return (
     <Suspense fallback={
       <div className="flex flex-col items-center justify-center min-h-[calc(100vh-70px)] bg-background">
@@ -447,7 +449,7 @@ export default function PracticeQuiz({ params }: { params: { session_id: string 
         <p className="mt-4 text-sm text-muted-foreground font-medium">Loading practice...</p>
       </div>
     }>
-      <PracticeQuizContent sessionId={params.session_id} />
+      <PracticeQuizContent />
     </Suspense>
   );
 }
