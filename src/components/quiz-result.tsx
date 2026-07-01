@@ -233,7 +233,7 @@ export function QuizResult({ questions, answers, isHistoryView = false }: QuizRe
 
                   <div className="bg-secondary/50 border border-border p-4 rounded-xl space-y-1.5">
                     <span className="block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">{t('explanation')}</span>
-                    <p className="text-xs font-medium text-foreground leading-relaxed">{q.explanation_jp}</p>
+                    <p className="text-xs font-medium text-foreground leading-relaxed"><FuriganaText text={q.explanation_jp} /></p>
                     <p className="text-[11px] text-muted-foreground italic leading-relaxed">
                       {globalLang === 'en' ? q.explanation_en : q.explanation_id}
                     </p>
